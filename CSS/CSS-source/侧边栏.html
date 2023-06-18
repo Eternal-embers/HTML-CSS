@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 侧边导航菜单 */
+.sidenav {
+  height: 100%; /* 100% 全高 */
+  width: 0; /* 0 宽度 - 使用 JavaScript 更改 */
+  position: fixed; /* 原地不动 */
+  z-index: 1; /* 保持在顶部 */
+  top: 0; /* 保持在顶部 */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* 禁用水平滚动 */
+  padding-top: 60px; /* 将内容从顶部放置 60px */
+  transition: 0.5s; /* 0.5 秒过渡效果在侧导航中滑动 */
+}
+
+/* 导航菜单链接 */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* 当您将鼠标悬停在导航链接上时，更改它们的颜色 */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* 关闭按钮的位置和样式（右上角） */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* 样式页面内容 - 如果您想在打开侧导航时将页面内容推送到右侧，请使用此选项 */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* 在高度小于 450 像素的小屏幕上，更改 sidenav 的样式（更少的填充和更小的字体大小）*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">联系方式</a>
+</div>
+
+<h2>动画侧边导航示例</h2>
+<p>单击下面的元素以打开侧面导航菜单。</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</body>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+</html>

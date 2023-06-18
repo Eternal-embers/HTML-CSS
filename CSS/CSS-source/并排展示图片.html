@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head><style>
+* {
+	<!--加了box-sizing:border-box属性，padding和border的值就不会在影响元素的宽高-->
+	box-sizing: border-box;
+}
+.img-container{
+	float: left;
+	width: 33.3%;
+	padding: 5px;
+}
+<!--常规清除浮动的写法-->
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+</style></head>
+
+<html>
+<body>
+<img src=".\picture\1.jpg" class="img-container" alt="图片1"/>
+<img src=".\picture\2.jpg" class="img-container" alt="图片2"/>
+<img src=".\picture\3.jpg" class="img-container" alt="图片3"/>
+</body>
+</html>

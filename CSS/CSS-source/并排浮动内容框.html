@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head><style>
+* {
+	box-sizing: border-box;
+}
+.box{
+	float: left;
+	width: 33.3%;
+	padding: 50px;
+}
+
+.clearfix::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+</style></head>
+
+<html>
+<div class="clearfix">
+	<div class="box" style="background-color: rgb(60, 179, 113)">
+	<p>box1</p>
+	</div>
+	<div class="box" style="background-color: rgb(238, 130, 238)">
+	<p>box2</p>
+	</div>
+	<div class="box" style="background-color: rgb(106, 90, 205)">
+	<p>box3</p>
+	</div>
+</div>
+</html>
