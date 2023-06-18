@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+body{
+	background-image:url(../../picture/background-picture_1.jpg);
+	background-attachment: fixed;
+}
+h1{
+	text-align: center;
+	font-family: STXingKai;
+	font-weight: 700;
+	color: hsl(207, 100%, 55%);
+	margin: 0 auto;
+	border-style: solid;
+	border-width: 3px;
+	border-color: hsl(168, 65%, 51%);
+	width: 30%;
+	height: 40%;
+}
+h3{
+	font-family: STXingKai;
+	font-size: 30px;
+	font-weight: 700;
+	color: hsl(251, 100%, 76%);
+}
+em{
+	color: hsl(172, 96%, 44%);
+	font-family: KaiTi;
+	font-weight: 700;
+	font-size: 25px;
+}
+pre{
+	color: rgb(0, 160, 169);
+	font-family: STSong;
+	font-size: 20px;
+	color: rgb(0, 132, 255)
+	font-weight: 500;
+}
+
+</style>
+</head>
+
+<body>
+<h1>C语言输入与输出方法&技巧</h1>
+<h3 id="id1">输入</h3>
+<hr/>
+<em id="id2">导入IO库</em>
+<pre>
+#include &lt; stdio.h &gt;//纯c环境
+#include &lt; cstdio &gt;//cpp环境
+</pre>
+<hr/>
+<em id="id3">控制串组成</em>
+<pre>
+1.格式控制符：%hd,%d,%ld,%f,%lf,%c,%s
+%a以指数形式输出浮点数(十六进制和p-记法),字母以小写显示
+%A以指数形式输出浮点数(十六进制和p-记法),字母以大写显示
+%o读取八进制数
+%x读取十六进制数，a,b,c,d,e小写，大写忽略
+%X读取十六进制数，A,B,C,D,E大写，小写忽略
+%p读取指针值
+%n至此已读入的等价字符数
+%u读取无符号十进制整数
+%[]扫描字符集合
+%%读取百分号
+*读入后不赋给响应的变量
+2.空白符::由空格或\t或\n表示，在输入流中忽略一个或多个空白字符串（只要存在一个就可以忽略多个）。控制串中的空白符让scanf（）在输入流中读，但不保存结果，直到发现非空白字符为止。
+3.非空白符：除去格式控制符和空白符以外的其他字符，如逗号，分号，于空白符相同，使scanf（）在输入流中读，但不保存结果
+读入单个字符：scanf（“%c”,&amp; var）;
+不忽略空白符，可以读到空格，制表符，换行符
+</pre>
+<hr/>
+<em id="id4">读入字符串</em>
+<pre>
+char str[80];
+gets(str);//读入一整行，遇到空白符结束，如空格
+scanf(“%s”,&amp; str)
+%[]扫描字符集合,用途是扫描满足集合条件是所有字符直到碰到第一个不满足的，以字符串形式返回，这种定义条件的特性赋予了它忽略空白符的功能，不同于%c是强制的,%[]是可选的
+%[a-zA-Z]匹配全部字母
+%[0-9]匹配数字
+%[]扫描字符集还支持取反操作，即在括号内的开始添加^
+%[^0-9]匹配非数字
+%[^\n]读取一整行忽略其中的空白符
+</pre>
+<hr/>
+<em id="id5">接受单个字符</em>
+<pre>
+c=getchar()；
+</pre>
+<hr/>
+<em id="id6">输入技巧</em>
+<pre>
+限制每次读入的字符串长度：
+Scanf（%20s”,&amp; var);//注意给\0留空间
+Scanf(“%3d”,&amp; var);//输入12345，var=123
+读入字符串但是忽略:
+Scanf(“%d%*c%d”,&amp; var1,&apm; var2)；//匹配中间分隔符未知的情况
+判断行尾：
+算法题中，有些没有明确给出每行的长度或是读取多少，则需要手动判断或后期处理；
+如：给N行数字，每一行由纯数字组成，保证每一行的数字个数为偶数个，按相邻的两个数字为一个数，对每一行求和输出
+char str[80];
+gets(str);
+int len=strlen(str);
+int sum=0;
+for(int i=0;i &lt; len/2;i++)
+{int num;
+sscanf(str+i*2,”%2d”,&amp; num);
+sum+=num;}//
+sscanf和scanf方法基本一样，唯一不同在于其前面多了一个参数，传递进去的是char数组
+</pre>
+<br/>
+<h3 id="id7">输出</h3>
+<hr/>
+<em id="id8">转义字符</em>
+<pre>
+一些字符要用转义字符输出：\’ \” \?  \\
+\a警告
+\b退格：将光标当前位置后退一个字符
+\f换页，将光标移动到下一页开头
+\n换行，将光标移动到下一行开头
+\r回车，将光标移动到本行开头
+\t水平制表符，光标移动到下一个Tab位置
+\v垂直制表符
+<hr/>
+<em id="id9">输出方法</em>
+Printf()；
+Puts()；
+Putchar()；
+<hr/>
+<em id="id10">输出精度控制</em>
+printf(“%*.*f,20,10,var);
+printf(“%-m.nf,var);
+printf(“%20s”,str);
+<hr/>
+<em id="id11">输出%的方法</em>
+1.%%
+2.\%
+<hr/>
+</pre>
+<pre>
+<h1>Visual studio中的安全函数</h1>
+1.	scanf_s(const char *format,argument…);
+其中，如果格式字符串中出现%c/%s，需要以字符为大小作为紧跟变量的参数进行传递(单位bit,指明读取多少字节)；
+举例：scanf_s(“%s”,str,20);
+		scanf_s(“%c%c”,&amp; c1,1,&amp; c2,1);
+&amp;c1和&c2后面紧跟的参数用来控制缓冲区的大小，表示最多在缓冲区存放多少个字符，多余的字符不予考虑。
+2.fscanf_s(FILE *stream,const char *format,argument…);
+其中，如果格式字符串中出现%c/%s，需要以字符为大小作为紧跟变量的参数进行传递(单位bit,指明读取多少字节)；
+举例:fscanf_s(fp,“%s”,str,20);
+	  fscanf_s(fp,“%c%c”,&amp; c1,1,&amp; c2,1);
+3.fopen_s(FILE **pFile,const char *filename,const char *mode);
+形参FILE **pFile是指向文件指针的指针，所以需要将文件指针的地址传进去。
+举例：fopen_s(&amp; fp,“file.txt”,“r”);
+4.fread_s(
+void *buffer,// 数据的存储位置。
+size_t bufferSize,//目标缓冲区的大小(以字节为单位)
+size_t elementSize,//要读取的项的大小(以字节为单位)
+size_t count,//要读取的项的最大数量
+FILE *stream);//指向FILE结构的指针
+举例：fread_s(str,30,20,5,fp);
+5.gets_s(char *str,unsigned int buffersize);
+gets_s遇到\n结束输入，并将\n换成\0存储到str中。
+举例：gets_s(str,20);
+6.char * fgets(char *str,int numchars,FILE *stream);
+Numchars表示要读取的最大字符数
+
+</pre>
+</body>
+
+</html>
