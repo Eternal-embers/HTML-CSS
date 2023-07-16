@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #text {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="text"></div>
+    <script>
+        var text =
+            "在上面的示例中，我们首先定义了要打印的一大段文字 text,然后设置了延迟时间 speed,即每个字符的打印间隔时间。"
+            + "接下来,我们使用一个计数器i 来控制打印的字符位置。"
+            + "在函数 printText中,我们通过 charAt 方法逐个获取 text 中的字符，并将其追加到 &lt;div&gt; 元素中的innerHTML中。"
+            + "然后,递增计数器i并使用setTimeout函数设置延迟以调用printText函数,从而实现逐个打印效果。"
+            + "需要注意的是在CSS中我们使用了 white-space: pre-wrap;来保留原始文本中的换行符。这样可以保证打印的文字效果和原始文本一致。"
+            + "您可以根据需要自由调整打的值即可。"
+        var speed = 50; // 每个字符的打印间隔时间（毫秒）
+        var i = 0;
+        function printText() {
+            if (i < text.length) {
+                document.getElementById("text").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(printText, speed); //设置延迟时间，继续打印下一个字符
+            }
+        }
+        printText();
+    </script>
+</body>
+
+</html>
+<script>
+    /*
+    将递归写法改成迭代写法后，会在printText函数中使用循环来代替递归调用。但是，在循环中无法使用setTimeout函数来实现延迟打印的效果。
+    
+    setTimeout函数可以将一个函数推到JavaScript事件队列的末尾，并在指定的延迟时间后执行。这样就可以实现逐个打印字符的效果。
+    
+    在递归写法中，每次调用printText函数时都会使用setTimeout函数来设置延迟并继续打印下一个字符。而在迭代写法中，循环没有办法实现每个字符的延迟打印，因为循环会立即执行完毕，没有等待的延迟。
+    
+    所以，将printText函数改为迭代写法后，无法实现逐个打印文本的效果。
+    */
+</script>

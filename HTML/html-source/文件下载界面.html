@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>多文件下载页面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>多文件下载页面</h1>
+    <table id="files">
+        <thead>
+            <tr>
+                <th>文件名</th>
+                <th>文件大小</th>
+                <th>下载</th>
+            </tr>
+        </thead>
+        <tbody id="file-body">
+            <tr>
+                <td>文件1</td>
+                <td>100KB</td>
+                <td>点击下载</td>
+            </tr>
+            <tr>
+                <td>文件2</td>
+                <td>200KB</td>
+                <td>点击下载</td>
+            </tr>
+            <tr>
+                <td>文件3</td>
+                <td>300KB</td>
+                <td>点击下载</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="actions">
+        <button id="download-btn">下载</button>
+    </div>
+    <script>
+        // 获取所有文件的信息
+        var files = document.getElementById('files').rows;
+
+        // 初始化下载按钮
+        var downloadBtn = document.getElementById('download-btn');
+
+        // 定义一个变量来保存下载的文件名
+        var fileName = '';
+
+        // 定义一个变量来保存下载的文件大小
+        var fileSize = 0;
+
+        // 循环遍历所有文件
+        for (var i = 0; i < files.length; i++) {
+            // 获取文件的信息
+            var file = files[i];
+
+            // 将文件名和文件大小保存到变量中
+            fileName = file.cells[1].innerHTML;
+            fileSize = file.cells[2].innerHTML;
+
+            // 将变量保存到`download.txt`文件中
+            var text = `${fileName} - ${fileSize} KB`;
+            var blob = new Blob([text], { type: 'text/plain' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+        }
+    </script>
+</body>
+
+</html>

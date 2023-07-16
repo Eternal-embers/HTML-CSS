@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 跑马灯效果 */
+        .highlighted {
+            letter-spacing: 0.2rem;
+            font-size: 1.5rem;
+            background-image: -webkit-linear-gradient(left, #147B96, #E6D205 25%, #147B96 50%, #E6D205 75%, #147B96);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-background-size: 200% 100%;
+            -webkit-animation: maskedAnimation 4s infinite linear;
+        }
+
+        @keyframes maskedAnimation {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -100% 0;
+            }
+        }
+
+        /* 打字机效果 */
+        .typing {
+            color: black;
+            font-size: 2em;
+            width: 21em;
+            height: 1.5em;
+            border-right: 1px solid transparent;
+            animation: typing 2s steps(42, end), blink-caret .75s step-end infinite;
+            font-family: Consolas, Monaco;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        /* 打印效果 */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 21em;
+            }
+        }
+
+        /* 光标 */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: currentColor;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="searchInput" placeholder="输入关键词">
+    <button id="searchButton">搜索</button>
+    <div id="content">
+        <!-- 这里放置网页的内容 -->
+        一旦用户在输入框中输入关键词并点击搜索按钮,search函数将被调用。它会首先调用removeHighlight函数来取消之前的高亮显示,然后调用highlight函数来高亮显示与关键词匹配的文本。
+        高亮显示的文本将用`&lt;span class="highlighted"&gt;`标签包裹起来,通过CSS样式来实现高亮显示效果。如果用户清空输入框,所有的高亮将被自动移除。
+        请注意,这只是一个基本的示例,可能不适用于所有情况。实际应用中,你可能需要处理更多的细节,例如仅搜索可见的文本、支持多个关键词、处理特殊字符等。
+    </div>
+</body>
+<!--
+<script>
+    function highlightText(searchText) {
+        var body = document.getElementsByTagName('body')[0];
+        var html = body.innerHTML;
+        var regex = new RegExp(searchText, 'gi');
+        var highlightedText = html.replace(regex, '<span style="background-color: yellow;">$&</span>');
+        body.innerHTML = highlightedText;
+    }
+    var searchText = prompt('输入要搜索的文字：');
+    highlightText(searchText);
+</script>
+-->
+<script>
+    function highlight(keyword) {
+        console.log("搜索内容:" + keyword);//记录搜索内容
+        const content = document.getElementById("content");
+        const regex = new RegExp(keyword, "gi");//正则表达式实例化，gi表示全局匹配，忽略大小写
+        const highlighted = content.innerHTML.replace(regex, "<span class='highlighted'>$&</span>");//$&包括替换字符串中整个匹配项的副本。
+        console.log("匹配内容:" + content.innerHTML.toString());//记录匹配内容
+        content.innerHTML = highlighted;
+    }
+
+    function removeHighlight() {
+        const highlighted = document.getElementsByClassName("highlighted");
+        while (highlighted.length) {
+            const parent = highlighted[0].parentNode;
+            parent.replaceChild(document.createTextNode(highlighted[0].textContent), highlighted[0]);
+        }
+    }
+
+    /* 搜索 */
+    function search() {
+        const input = document.getElementById("searchInput");//获取搜索内容
+        const keyword = input.value;
+        removeHighlight();//取消之前的高亮
+        if (keyword !== "") {
+            highlight(keyword);//高亮显示搜索内容
+        }
+    }
+    /* 设置点击搜索按钮的search事件 */
+    const searchButton = document.getElementById("searchButton");
+    searchButton.addEventListener("click", search);
+</script>
+
+</html>

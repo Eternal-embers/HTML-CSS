@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* 样式可以根据需要自行定义 */
+        #comic-container {
+            height: 750px;
+            overflow-y: scroll;
+        }
+
+        #content {
+            margin-bottom: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="comic-container">
+        <div id="content">
+            <iframe src="D:/漫画/斗罗大陆/斗罗大陆列表.html" width="1500" height="750"></iframe>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+                loadNextChapter();
+            }
+        });
+
+        function loadNextChapter() {
+            // 加载下一话的HTML文件
+            var nextChapter = document.createElement('div');
+            nextChapter.innerHTML = '<div><iframe src = "D:/programming/HTML&CSS/HTML/图片展示/图片展示.html" width = "500" height = "400"></iframe><div>';
+            // 将新内容添加到已显示内容底部，之前已经加载的内容不变
+            var comicContainer = document.getElementById('comic-container');
+            comicContainer.insertBefore(nextChapter, comicContainer.lastChild);
+        }
+    </script>
+</body>
+
+</html>

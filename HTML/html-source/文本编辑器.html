@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>文本编辑器</title>
+</head>
+
+<body>
+    <textarea id="myTextarea" rows="10" cols="50"></textarea>
+    <br>
+    <button onclick="saveToFile()">保存到电脑</button>
+
+    <script>
+        function saveToFile() {
+            var textToSave = document.getElementById("myTextarea").value;
+            var hiddenElement = document.createElement("a");
+            hiddenElement.href = "data:text/plain;charset=utf-8," + encodeURIComponent(textToSave);
+            hiddenElement.target = "_blank";
+            hiddenElement.download = "myFile.txt";
+            hiddenElement.click();
+        }
+    </script>
+</body>
+
+</html>
