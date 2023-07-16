@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .slider {
+            width: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 100%;
+        }
+
+        .slides img {
+            width: 500px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slides">
+            <img src="./picture/img(1).jpg" alt="Image 1">
+            <img src="./picture/img(2).jpg" alt="Image 2">
+            <img src="./picture/img(3).jpg" alt="Image 3">
+        </div>
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+    </div>
+</body>
+<script>
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelector('.slides');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const slideWidth = slider.offsetWidth;
+    let currentSlide = 0;
+
+    prevButton.addEventListener('click', () => {
+        if (currentSlide > 0) {
+            currentSlide--;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+        else {
+            currentSlide = 2;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentSlide < slides.childElementCount - 1) {
+            currentSlide++;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+        else {
+            currentSlide = 0;
+            slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    });
+</script>
+
+</html>
