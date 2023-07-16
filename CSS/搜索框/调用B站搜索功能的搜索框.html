@@ -10,7 +10,7 @@
 	top: 0;
 	margin: auto;
 }
-input{
+.input{
 	float: left;
 	width: 500px;
 	height: 25px;
@@ -40,7 +40,9 @@ button:hover{
 
 <html>
 <div class="box">
-	<input type="text" placeholder="请输入搜索内容"> <!--文本输入框-->
-	<button type="button"><i class="fa fa-search"></i></button>  <!--搜索按钮-->
+	<form target="_blank" method="get" action = "https://search.bilibili.com/all">
+			<input class="input" type="text" placeholder="请输入搜索内容" name="keyword"/>
+			<button type="submit/button"><i class="fa fa-search"></i></button> <!--搜索按钮-->
+	</form>
 </div>
 </html>
