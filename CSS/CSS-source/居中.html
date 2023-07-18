@@ -1,4 +1,142 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+        .block_center {
+            margin: auto;
+            width: 50%;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .text-align {
+            text-align: center;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .img_center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+        }
+
+        .right {
+            float: right;
+            width: 400px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 10px;
+        }
+
+        .clearfix {
+            overflow: auto;
+            border: 1px solid black;
+        }
+
+        .clearfix img {
+            float: left;
+            height: 400px;
+        }
+
+        .center-padding {
+            padding: 20px 0;
+            border: 1px solid black;
+        }
+
+        .center_all {
+            padding: 20px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .center-line-height {
+            line-height: 150px;
+            height: 150px;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        .center-line-height p {
+            line-height: 1.5;
+            display: inline-block;
+        }
+
+        .center-position_transform {
+            height: 200px;
+            position: relative;
+            border: 1px solid black;
+        }
+
+        .center-position_transform p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-Flexbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<!--块元素水平居中,如果未设置width属性或设置为100%,则居中无效-->
+<div class="block_center">
+    <p>块元素居中,设置maggin为auto,width属性必须设置且不为100%</p>
+</div>
+<br />
+<!--居中对齐文本-->
+<div class="text-align">
+    <p>水平居中,设置text-align为center</p>
+</div>
+<br />
+<!--居中图像-->
+<div class="img_center">
+    <img src="../picture/4.png" />
+</div>
+<br />
+<!--左右对齐-使用position-->
+<div class="right">
+    <p>对齐元素的另一种方法是使用 float 属性,此例子为右对齐</p>
+</div>
+<br />
+<!--内部元素的高度大于包含它的元素导致溢出的解决-->
+<div class="clearfix">
+    <p>如果一个元素比包含它的元素高,并且它是浮动的,它将溢出容器,可以用clearfix解决此问题</p>
+    <img class="horizontal_center" src="../picture/4.png" />
+</div>
+<br />
+<!--垂直对齐-使用padding-->
+<div class="center-padding">
+    <p>垂直对齐,使用padding</p>
+</div>
+<br />
+<!--水平和垂直同时对齐-->
+<div class="center_all">
+    <p>如果要水平和垂直同时对齐,请使用padding和text-align:center</p>
+</div>
+<br />
+<!--垂直对齐-使用line-height-->
+<div class="center-line-height">
+    <p>垂直对齐,使用line-height</p>
+    <P>需要将height和line-height设置为同一高度</P>
+</div>
+<br />
+<!--垂直对齐,使用position和transform-->
+<div class="center-position_transform">
+    <p>垂直对齐,使用position和transform</p>
+</div>
+<br />
+<!--垂直对齐-使用Flexbox-->
+<div class="center-Flexbox">
+    <p>垂直对齐,使用弹性盒子Flexbox</p>
+</div>
+
 </html>
