@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 15%;
+            background-color: #f1f1f1;
+            height: 100%;
+            position: fixed;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            text-align: center;
+            color: black;
+            margin: 5px;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        /* 鼠标悬停时改变链接颜色 */
+        li a:hover {
+            background-color: #555;
+            color: rgba(178, 255, 180, 0.9);
+        }
+
+        /* 添加active类，以使用户知道他在哪个页面上 */
+        li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href="index.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+    </ul>
+
+</body>
+
+</html>

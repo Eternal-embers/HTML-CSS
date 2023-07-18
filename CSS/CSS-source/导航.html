@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        * {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f0f0f0;
+            padding: 6px 12px;
+            margin: 5px 0px;
+            display: block;
+        }
+
+        a:hover {
+            font-size: 18px;
+            color: hsla(152, 100%, 52%, 0.6);
+        }
+
+        #navigation {
+            width: 20px;
+            color: white;
+            font-size: 20px;
+        }
+
+        #navigation:hover {
+            cursor: default;
+            font-size: 25px;
+        }
+
+        .navigator {
+            width: 350px;
+            height: 750px;
+            border: 1px solid hsla(0, 0%, 80%, 0.4);
+            margin: 10px;
+            padding: 10px 20px;
+            display: none;
+        }
+
+        .navigator>a {
+            font-style: italic;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .navigator>a:hover {
+            font-size: 25px;
+        }
+
+        #close {
+            color: white;
+            float: right;
+            width: 20px;
+            font-size: 20px;
+        }
+
+        #close:hover {
+            font-size: 25px;
+            cursor: default
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 350px;
+            font-size: 15px;
+        }
+
+        /* 鼠标悬停时改变链接颜色 */
+        li a:hover {
+            border: 1px solid hsla(152, 100%, 52%, 0.6);
+        }
+    </style>
+</head>
+
+<body>
+    <div onclick="openSidebar()" id="navigation">&nbsp;&nbsp;&#9776;</div>
+    <div class="navigator" id="sidebar">
+        <div onclick="closeSidebar()" id="close">&#10005;</div>
+        <a href="https://github.com/Attacking-Titan?tab=repositories">Repositories</a>
+        <ul>
+            <li><a href="https://github.com/Attacking-Titan/Repo-note">Attacking-Titan/Repo-note</a></li>
+            <li><a href="https://github.com/Attacking-Titan/Java-project">Attacking-Titan/Java-project</a></li>
+            <li><a href="https://github.com/Attacking-Titan/Repo-C">Attacking-Titan/Repo-C</a></li>
+            <li><a href="https://github.com/Attacking-Titan/HTML-CSS">Attacking-Titan/HTML-CSS</a></li>
+            <li><a href="https://github.com/Attacking-Titan/Repo-JS">Attacking-Titan/Repo-JS</a></li>
+            <li><a href="https://github.com/Attacking-Titan/C-project">Attacking-Titan/C-project</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    function openSidebar() {
+        document.getElementById("navigation").style.display = "none";
+        document.getElementById("sidebar").style.display = "block";
+    }
+    function closeSidebar() {
+        document.getElementById("navigation").style.display = "block";
+        document.getElementById("sidebar").style.display = "none";
+    }
+</script>
+
+</html>
