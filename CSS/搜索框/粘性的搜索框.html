@@ -1,101 +1,110 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-<head>
-<style>
-pre{
-font-weight:700;
-font-style:italic
-}
-a{
-text-decoration:none;
-font-style:italic;
-}
-b{font-family:STXingKai;}
 
-.box{
-	position: sticky;<!--粘性-->
-	border: solid 1px hsl(0, 0%, 25%);
-	width: 500px;
-	height: 25px;
-	top: 0;
-	margin: auto;
-}
-input{
-	float: left;
-	width: 500px;
-	height: 25px;
-	font: 16px STKaiTi;
-	border: solid 1px hsl(0, 0%, 25%);
-}
-input:hover{
-	border: solid 1px hsl(0, 0%, 25%);
-	outline: solid 2px hsl(143, 83%, 83%);
-}
-button{
-	float: left;
-	position: absolute; 
-	left: 475px;
-	bottom: 2px;
-	z-index: 1;<!--重叠元素,正负决定堆叠顺序-->
-	height: 25px;
-	border: none;
-	background: none;
-}
-button:hover{
-	font-size: 18px;
-	font-weight: 500;
-}
-</style>
+<head>
+	<style>
+		pre {
+			font-weight: 700;
+			font-style: italic
+		}
+
+		a {
+			text-decoration: none;
+			font-style: italic;
+		}
+
+		b {
+			font-family: STXingKai;
+		}
+
+		.box {
+			position: sticky;
+			border: solid 1px hsl(0, 0%, 25%);
+			width: 500px;
+			height: 25px;
+			top: 0;
+			margin: auto;
+		}
+
+		input {
+			float: left;
+			width: 500px;
+			height: 25px;
+			font: 16px STKaiTi;
+			border: solid 1px hsl(0, 0%, 25%);
+		}
+
+		input:hover {
+			border: solid 1px hsl(0, 0%, 25%);
+			outline: solid 2px hsl(143, 83%, 83%);
+		}
+
+		button {
+			float: left;
+			position: absolute;
+			left: 475px;
+			bottom: 2px;
+			z-index: 1;
+			height: 25px;
+			border: none;
+			background: none;
+		}
+
+		button:hover {
+			font-size: 18px;
+			font-weight: 500;
+		}
+	</style>
 </head>
 
 <html>
 <b>目录</b>
-<br/>
+<br />
 <a href="#menu">menu</a>
-<br/>
+<br />
 <a href="#createdhead">createdhead</a>
-<br/>
+<br />
 <a hred="#input">input</a>
-<br/>
+<br />
 <a href="#print">print</a>
-<br/>
+<br />
 <a href="#change">change</a>
-<br/>
+<br />
 <a href="#dele">dele</a>
-<br/>
+<br />
 <a href="#search">search</a>
-<br/>
+<br />
 <a href="#save">save</a>
-<br/>
+<br />
 <a href="#save_f">save_f</a>
-<br/>
+<br />
 <a href="#read">read</a>
-<br/>
+<br />
 <a href="#print_file">print_file</a>
-<br/>
+<br />
 <a href="#change_file">change_file</a>
-<br/>
+<br />
 <a href="#dele_file">dele_file</a>
-<br/>
+<br />
 <a href="#search_file">search_file</a>
-<br/>
+<br />
 <a href="#sort_f">sort_f</a>
-<br/>
+<br />
 <a href="#backup_f">backup_f</a>
-<br/>
+<br />
 <a href="#help">help</a>
-<br/>
+<br />
 <a href="#scheme">schme</a>
-<br/>
+<br />
 <a href="#main">main</a>
-<br/>
+<br />
 
-<hr/>
+<hr />
 
 <div class="box">
 	<input type="text" placeholder="请输入搜索内容"> <!--文本输入框-->
-	<button type="button"><i class="fa fa-search"></i></button></button>  <!--搜索按钮-->
+	<button type="button"><i class="fa fa-search"></i></button></button> <!--搜索按钮-->
 </div>
 
 <pre>
