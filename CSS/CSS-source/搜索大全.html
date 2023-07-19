@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="icon" href="../picture/搜索.png">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+
+        #dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 100px;
+            border: 0.8px solid hsla(0, 0%, 0%, 0.4);
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0, 0.2);
+            left: 0;
+        }
+
+        .dropdown-content li {
+            font-family: "Microsoft YaHei";
+            font-size: 10px;
+            display: block;
+            color: hsla(0, 0%, 0%, 0.7);
+            padding: 10px 0px;
+            text-align: center;
+        }
+
+        .dropdown-content li:hover {
+            cursor: default;
+            color: white;
+            background-color: black;
+        }
+
+        #dropdown:hover {
+            color: hsla(152, 80%, 45%, 0.8);
+        }
+
+        #dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #curEngine {
+            margin-right: 8px;
+            font-size: 15px;
+            font-family: "Microsoft YaHei";
+            padding: 1px 0;
+        }
+
+        #form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 0;
+        }
+
+        #input {
+            display: flex;
+            align-items: center;
+            width: 36%;
+            height: 30px;
+            font-size: 16px;
+            font-family: "STkaiTi";
+            border: solid 1px hsl(0, 0%, 25%);
+            border-radius: 5px;
+        }
+
+        #input:hover {
+            outline: solid 1px hsl(143, 83%, 83%);
+        }
+
+        .search {
+            position: relative;
+            right: 28px;
+            font-size: 13.5px;
+            border: none;
+            background: none;
+        }
+
+        button:hover {
+            font-size: 16px;
+        }
+
+        #setting {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 8px 16px;
+        }
+
+        #setting i {
+            font-size: 20px;
+        }
+
+        #choose {
+            cursor: pointer;
+        }
+
+        #choose:hover {
+            color: hsla(155, 100%, 50%, 0.6);
+        }
+
+        #bgFileInput {
+            display: none;
+        }
+    </style>
+</head>
+
+<html>
+
+<body>
+    <form target="_blank" method="get" action="https://cn.bing.com/search" id="form">
+        <div id="engine">
+            <div class="fa-solid fa-angle-down" id="dropdown">
+                <div class="dropdown-content">
+                    <li name="Bing" onclick="switchEngine()">Bing</li>
+                    <li name="Yandex" onclick="switchEngine()">Yandex</li>
+                    <li name="F搜" onclick="switchEngine()">F搜</li>
+                    <li name="百度" onclick="switchEngine()">百度</li>
+                    <li name="搜狗" onclick="switchEngine()">搜狗</li>
+                    <li name="GitHub" onclick="switchEngine()">GitHub</li>
+                    <li name="Goobe" onclick="switchEngine()">Goobe</li>
+                    <li name="git:logs" onclick="switchEngine()">git:logs</li>
+                    <li name="Stack Overflow" onclick="switchEngine()">Stack Overflow</li>
+                    <li name="开发者搜索" onclick="switchEngine()">开发者搜索</li>
+                    <li name="博客园" onclick="switchEngine()">博客园</li>
+                    <li name="掘金" onclick="switchEngine()">掘金</li>
+                    <li name="知乎" onclick="switchEngine()">知乎</li>
+                    <li name="wikiHow" onclick="switchEngine()">WikiHow</li>
+                    <li name="Bilibili" onclick="switchEngine()">Bilibili</li>
+                    <li name="MDN" onclick="switchEngine()">MDN</li>
+                    <li name="W3Cschool" onclick="switchEngine()">W3Cschool</li>
+                    <li name="CSDN" onclick="switchEngine()">CSDN</li>
+                </div>
+            </div>
+            <span id="curEngine">Bing</span>
+        </div>
+        <input id="input" type="text" placeholder="请输入搜索内容" name="q" />
+        <button class="search" type="submit/button"><i class="fa fa-search"></i></button>
+    </form>
+    <div id="setting">
+        <input id="bgFileInput" type="file" accept="image/*">
+        <label for="bgFileInput">
+            <i id="choose" class="fa-regular fa-image"></i>
+        </label>
+
+    </div>
+</body>
+
+<script>
+    function switchEngine() {
+        var element = event.target;
+        var name = element.getAttribute("name");
+        var curEngine = document.getElementById('curEngine');
+        if (name != curEngine)
+            curEngine.innerHTML = name + "&nbsp;";//设置搜索引擎的名称
+        else
+            return;
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+        switch (name) {
+            case "Bing": {
+                form.setAttribute("action", 'https://cn.bing.com/search');
+                input.setAttribute("name", "q");
+                break;
+            }
+            case "Yandex": {
+                form.setAttribute("action", "https://yandex.com/search/");
+                input.setAttribute("name", "text");
+                break;
+            }
+            case "F搜": {
+                form.setAttribute("action", "https://fsoufsou.com/search");
+                input.setAttribute("name", "q");
+                break;
+            }
+            case "百度": {
+                form.setAttribute("action", "https://baidu.com/s");
+                input.setAttribute("name", "word");//word或wd
+                break;
+            }
+            case "搜狗": {
+                form.setAttribute("action", "https://www.sogou.com/web");
+                input.setAttribute("name", "query");
+                break;
+            }
+            case "GitHub": {
+                form.setAttribute("action", "https://github.com/search");
+                input.setAttribute("name", "q");
+                break;
+            }
+            case "Goobe": {
+                form.setAttribute("action", "https://goobe.io/search.aspx");
+                input.setAttribute("name", "k");
+                break;
+            }
+            case "git:logs": {
+                form.setAttribute("action", "https://www.gitlogs.com/most_popular");
+                input.setAttribute("name", "topic");
+                break;
+            }
+            case "Stack Overflow": {
+                form.setAttribute("action", "https://stackoverflow.com/search");
+                input.setAttribute("name", "q");
+                break;
+            }
+            case "开发者搜索": {
+                form.setAttribute("action", "https://kaifa.baidu.com/searchPage");
+                input.setAttribute("name", "wd");
+                break;
+            }
+            case "博客园": {
+                form.setAttribute("action", "https://zzk.cnblogs.com/s");
+                input.setAttribute("name", "w");
+                break;
+            }
+            case "掘金": {
+                form.setAttribute("action", "https://juejin.cn/search");
+                input.setAttribute("name", "query");
+                break;
+            }
+            case "知乎": {
+                form.setAttribute("action", "https://zhihu.com/search");
+                input.setAttribute("name", "q");
+                break;
+            }
+            case "wikiHow": {
+                form.setAttribute("action", "https://zh.wikihow.com/wikiHowTo");
+                input.setAttribute("name", "search");
+                break;
+            }
+            case "Bilibili": {
+                form.setAttribute("action", "https://search.bilibili.com/all");
+                input.setAttribute("name", "keyword");
+                break;
+            }
+            case "MDN": {
+                form.setAttribute("action", "https://developer.mozilla.org/zh-CN/docs/Glossary");
+                input.setAttribute("name", "");
+                break;
+            }
+            case "W3Cschool": {
+                form.setAttribute("action", "https://www.w3cschool.cn/search");
+                input.setAttribute("name", "w");
+                break;
+            }
+            case "CSDN": {
+                form.setAttribute("action", "https://so.csdn.net/so/search");
+                input.setAttribute("name", "q");
+                break;
+            }
+        }
+    }
+</script>
+
+<script>
+    var bgFileInput = document.getElementById('bgFileInput');
+    bgFileInput.addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            var imageDataURL = e.target.result;
+            document.body.style.backgroundImage = 'url(' + imageDataURL + ')';// 设置背景图片
+        }
+        reader.readAsDataURL(file);
+    });
+</script>
+
+</html>
