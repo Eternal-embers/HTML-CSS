@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>注册账号</title>
+    <style>
+        .register-container {
+            width: 300px;
+            padding: 20px;
+            margin: 0 auto;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .register-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .register-container input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="openRegistration()">注册</button>
+
+    <script>
+        function openRegistration() {
+            var registrationWindow = window.open("", "registrationWindow", "width=400,height=300");
+            registrationWindow.document.write(`
+        <html>
+        <head>
+          <title>注册账号</title>
+          <style>
+            .register-container {
+              width: 300px;
+              padding: 20px;
+              margin: 0 auto;
+              background-color: #f1f1f1;
+              border: 1px solid #ccc;
+              border-radius: 5px;
+            }
+            
+            .register-container label {
+              display: block;
+              margin-bottom: 10px;
+            }
+            
+            .register-container input {
+              width: 100%;
+              padding: 5px;
+              margin-bottom: 10px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="register-container">
+            <h2>注册账号</h2>
+            <form>
+              <label for="username">账号:</label>
+              <input type="text" id="username" required>
+              
+              <label for="password">密码:</label>
+              <input type="password" id="password" required>
+              
+              <label for="captcha">验证码:</label>
+              <input type="text" id="captcha" required>
+              
+              <button type="submit">注册</button>
+            </form>
+          </div>
+        </body>
+        </html>
+      `);
+        }
+    </script>
+</body>
+
+</html>

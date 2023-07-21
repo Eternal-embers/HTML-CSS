@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <style>
+        .item {
+            float: left;
+            margin-right: 16px;
+        }
+
+        .toolbar {
+            margin: auto;
+            padding: auto;
+            width: 60%;
+            display: block;
+        }
+
+        /* 默认编辑器样式 */
+        #editor {
+            position: relative;
+            top: 8px;
+            width: 60%;
+            height: 600px;
+            border: 1px solid #a2a2a2;
+            border-radius: 8px;
+            padding: 8px;
+            margin: auto;
+            font-family: STKaiti;
+            font-size: 18px;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toolbar">
+        <div class="item">
+            <!-- 字体样式选择 -->
+            <label for="font-family"><i class="fa-solid fa-font"></i></label>
+            <select id="font-family" onchange="setFontFamily()">
+                <option value="SimHei">黑体</option>
+                <option value="Microsoft YaHei">微软雅黑</option>
+                <option value="STXihei">华文细黑</option>
+                <option value="STKaiti" selected>楷体</option>
+                <option value="kaiTi_GB2312">楷体_GB2312</option>
+                <option value="SimSun">宋体</option>
+                <option value="FangSong">仿宋</option>
+                <option value="NSimSun">新宋体</option>
+                <option value="LiSu">隶书</option>
+                <option value="STXinwei">华文新魏</option>
+                <option value="STCaiYun">华文彩云</option>
+                <option value="FZShuTi">方正舒体</option>
+                <option value="FZYaoTi">方正姚体</option>
+            </select>
+        </div>
+        <div class="item">
+            <!-- 文字大小选择 -->
+            <label for="font-size">Size:</label>
+            <input type="number" id="font-size" min="1" max="100" value="18" onchange="setFontSize()">
+        </div>
+        <div class="item">
+            <!-- 字体粗细选择 -->
+            <label for="font-weight"><i class="fa-solid fa-bold"></i></label>
+            <select id="font-weight" onchange="setFontWeight()">
+                <option value="normal">正常</option>
+                <option value="bold">粗体</option>
+            </select>
+        </div>
+        <div class="item">
+            <!-- 文字颜色选择 -->
+            <label for="font-color"><i class="fa-solid fa-palette"></i></label>
+            <input type="color" id="font-color" onchange="setColor()">
+        </div>
+
+        <div class="item">
+            <!-- 保存文件格式选择 -->
+            <label for="file-format"><i class="fa-solid fa-file"></i></label>
+            <select id="file-format">
+                <option value=".java">Java</option>
+                <option value=".c">C</option>
+                <option value=".cpp">C++</option>
+                <option value=".html">HTML</option>
+                <option value=".py">Python</option>
+                <option value=".css">CSS</option>
+                <option value=".js">JavaScript</option>
+            </select>
+        </div>
+        <div>
+            <!-- 保存 -->
+            <i class="fa-solid fa-download" onclick="saveToFile()"></i>
+        </div>
+    </div>
+    <div>
+        <!-- 编辑器内容区域 -->
+        <div id="editor" contenteditable="true">
+        </div>
+    </div>
+
+</body>
+<script>
+    function setFontFamily() {
+        var editor = document.getElementById('editor');
+        var fontFamily = document.getElementById('font-family').value;
+        editor.style.fontFamily = fontFamily;
+    }
+
+    function setFontSize() {
+        var editor = document.getElementById('editor');
+        var fontSize = document.getElementById('font-size').value + "px";
+        editor.style.fontSize = fontSize;
+    }
+
+    function setColor() {
+        var editor = document.getElementById('editor');
+        var fontColor = document.getElementById('font-color').value;
+        editor.style.color = fontColor;
+    }
+
+    function setFontWeight() {
+        var editor = document.getElementById('editor');
+        var fontWeight = document.getElementById('font-weight').value;
+        editor.style.fontWeight = fontWeight;
+    }
+
+    function saveToFile() {
+        // 获取编辑器
+        var editor = document.getElementById('editor');
+
+        var editorContent = editor.innerHTML;
+
+        // 获取用户选择的保存文件格式
+        var fileFormat = document.getElementById('file-format').value;
+
+        // 创建一个下载链接
+        var downloadLink = document.createElement('a');
+        downloadLink.href = 'data:text/plain,' + encodeURIComponent(editorContent);
+        downloadLink.download = 'file' + fileFormat;
+
+        // 添加下载链接到页面并点击触发下载
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    }
+</script>
+
+</html>

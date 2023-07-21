@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gallery</title>
+    <style>
+        body {
+            background-color: #f6f6f6;
+            font-family: Arial, sans-serif;
+        }
+
+        /* 图库的容器 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 图库 */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+        }
+
+        /* 图库中的一项 */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .gallery-overlay-content p {
+            position: relative;
+            top: 16px;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img class="gallery-img" src="../picture/7.png" alt="Image 1">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-content">
+                        <p>阿尼与三笠</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img class="gallery-img" src="../picture/8.jpg" alt="Image 2">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-content">
+                        <p>薇尔莉特</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img class="gallery-img" src="../picture/9.png" alt="Image 3">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-content">
+                        <p>维尔里特</p>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img class="gallery-img" src="../picture/10.jpg" alt="Image 4">
+                <div class="gallery-overlay">
+                    <div class="gallery-overlay-content">
+                        <p>薇尔莉特</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>注册界面</title>
+    <style>
+        body {
+            background: url('../picture/15.jpg');
+            margin: 0;
+            padding: 0;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        .modal {
+            position: relative;
+            width: 24%;
+            background-color: hsla(0, 99%, 100%, 0.3);
+            padding: 20px;
+            border-radius: 5px;
+            /* 毛玻璃效果 */
+            backdrop-filter: blur(8px);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 0;
+            right: 15px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="openModal()" style="margin: 30px;">点击注册</button>
+
+    <div class="overlay" id="overlay">
+        <div class="modal">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div style="font:18px STKaiti; font-weight:700; margin: 12px 0;">注册</div>
+            <form>
+                <label for="username">账号：</label>
+                <input type="text" id="username" placeholder="请输入账号" required><br><br>
+                <label for="password">密码：</label>
+                <input type="password" id="password" placeholder="请输入密码" required><br><br>
+                <label for="captcha">人机验证码：</label>
+                <input type="text" id="captcha" required><br><br>
+                <button type="submit">注册</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('overlay').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

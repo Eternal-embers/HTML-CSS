@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>图库</title>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image {
+            width: 250px;
+            margin: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .image:hover {
+            transform: scale(1.2);
+        }
+
+        .image img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .searchbar {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .searchbar input[type="text"] {
+            font-family: STKaiti;
+            padding: 8px 15px 8px 3px;
+            width: 300px;
+            border: 1px solid hsla(0, 0%, 0%, 0.4);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="searchbar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search" placeholder="输入关键词搜索">
+    </div>
+
+    <div class="gallery">
+        <div class="image" data-tags="动漫 进击的巨人 热血 阿尼 三笠">
+            <img src="../picture/7.png" alt="阿尼与三笠">
+        </div>
+        <div class="image" data-tags="动漫 紫罗兰永恒花园 薇尔莉特 治愈 美女">
+            <img src="../picture/8.jpg" alt="薇尔莉特">
+        </div>
+        <div class="image" data-tags="动漫 紫罗兰永恒花园 薇尔莉特 治愈 美女">
+            <img src="../picture/9.png" alt="薇尔莉特">
+        </div>
+        <div class="image" data-tags="动漫 紫罗兰永恒花园 薇尔莉特 治愈 美女">
+            <img src="../picture/10.jpg" alt="薇尔莉特">
+        </div>
+        <div class="image" data-tags="动漫 进击的巨人 热血 三笠">
+            <img src="../picture/11.jpg" alt="三笠">
+        </div>
+        <div class="image" data-tags="景色 傍晚 夕阳 动漫 进击的巨人 热血 三笠">
+            <img src="../picture/12.jpg" alt="三笠">
+        </div>
+        <div class="image" data-tags="动漫 进击的巨人 热血 三笠">
+            <img src="../picture/13.jpg" alt="三笠">
+        </div>
+        <div class="image" data-tags="动漫 进击的巨人 热血 艾伦">
+            <img src="../picture/14.jpg" alt="艾伦">
+        </div>
+        <div class="image" data-tags="动漫 美女 美腿 脚">
+            <img src="../picture/15.jpg" alt="美女">
+        </div>
+        <div class="image" data-tags="动漫 美女">
+            <img src="../picture/16.png" alt="美女">
+        </div>
+        <div class="image" data-tags="动漫 东京喰种 夕阳">
+            <img src="../picture/17.jpg" alt="东京喰种">
+        </div>
+        <div class="image" data-tags="唯美 夕阳 傍晚 云">
+            <img src="../picture/18.jpg" alt="夕阳">
+        </div>
+        <div class="image" data-tags="美女 海 沙滩 萌">
+            <img src="../picture/19.png" alt="美女">
+        </div>
+        <div class="image" data-tags="树 雪 日出">
+            <img src="../picture/20.jpg" alt="日出">
+        </div>
+        <div class="image" data-tags="少女 花">
+            <img src="../picture/21.jpg" alt="少女">
+        </div>
+        <div class="image" data-tags="少女">
+            <img src="../picture/22.jpg" alt="少女">
+        </div>
+        <div class="image" data-tags="美女 温泉">
+            <img src="../picture/23.jpg" alt="美女">
+        </div>
+        <div class="image" data-tags="可爱 美女">
+            <img src="../picture/24.jpg" alt="美女">
+        </div>
+        <div class="image" data-tags="天使 美女 翅膀">
+            <img src="../picture/25.jpg" alt="美女">
+        </div>
+        <div class="image" data-tags="科技 美女">
+            <img src="../picture/26.jpg" alt="美女">
+        </div>
+        <!-- 更多图片 -->
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const images = document.getElementsByClassName('image');
+
+        searchInput.addEventListener('keyup', function (e) {
+            const searchKeyword = e.target.value.toLowerCase();
+
+            Array.from(images).forEach(function (image) {
+                const tags = image.getAttribute('data-tags').toLowerCase();
+
+                if (tags.includes(searchKeyword) || searchKeyword === '') {
+                    image.style.display = 'block';
+                } else {
+                    image.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

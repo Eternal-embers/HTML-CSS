@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        #container {
+            width: 500px;
+            height: 300px;
+            background-image: url("../picture/14.jpg");
+            background-size: cover;
+        }
+
+        #container span {
+            display: inline-block;
+            font-size: 16px;
+            font-family: STKaiti;
+            font-weight: bold;
+            color: white;
+            padding: 0 5px;
+        }
+
+        #container span::first-letter {
+            text-transform: uppercase;
+        }
+
+        #container span::before {
+            content: attr(data-letter);
+            display: inline-block;
+            width: 1ch;
+            overflow: hidden;
+        }
+
+        #container span::after {
+            content: attr(data-letter);
+            display: inline-block;
+            width: 1ch;
+            overflow: hidden;
+            position: relative;
+            z-index: -1;
+            color: white;
+        }
+    </style>
+
+    <style>
+        .image-text {
+            position: relative;
+            display: inline-block;
+            background: url('../picture/28.png');
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: STKaiti;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .image-text1 {
+            position: relative;
+            display: block;
+            background: url('../picture/27.jpg');
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: STKaiti;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .image-text2 {
+            position: relative;
+            display: block;
+            background: url('../picture/29.jpg');
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: STKaiti;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<html>
+<div class="image-text">艾伦 耶格尔</div>
+<div class="image-text1">艾伦 耶格尔</div>
+<div class="image-text2">艾伦 耶格尔</div>
+<div id="container"></div>
+
+<script>
+    var container = document.getElementById("container");
+    var text = "艾伦 耶格尔";
+    var span = document.createElement("span");
+    span.innerText = text;
+    container.appendChild(span);
+</script>
+
+</html>
