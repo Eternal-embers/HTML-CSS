@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .glitch {
+            font-family: 'Arial', sans-serif;
+            font-size: 100px;
+            color: #00ff00;
+            position: relative;
+            text-transform: uppercase;
+            animation: glitch 3s infinite;
+        }
+
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .glitch:before {
+            animation: glitchTop 3s infinite;
+            clip-path: polygon(0 15%, 100% 25%, 100% 35%, 0 45%);
+            -webkit-clip-path: polygon(0 15%, 100% 25%, 100% 35%, 0 45%);
+        }
+
+        .glitch:after {
+            animation: glitchBottom 3s infinite;
+            clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+            -webkit-clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+        }
+
+        @keyframes glitch {
+            0% {
+                left: -2px;
+                top: -2px;
+            }
+
+            25% {
+                left: 2px;
+                top: 2px;
+            }
+
+            50% {
+                left: -2px;
+                top: -2px;
+            }
+
+            75% {
+                left: 2px;
+                top: 2px;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+            }
+        }
+
+        @keyframes glitchTop {
+            0% {
+                clip-path: polygon(0 15%, 100% 5%, 100% 15%, 0 25%);
+                -webkit-clip-path: polygon(0 15%, 100% 5%, 100% 15%, 0 25%);
+            }
+
+            25% {
+                clip-path: polygon(0 15%, 100% 25%, 100% 35%, 0 45%);
+                -webkit-clip-path: polygon(0 15%, 100% 25%, 100% 35%, 0 45%);
+            }
+
+            50% {
+                clip-path: polygon(0 5%, 100% 15%, 100% 25%, 0 15%);
+                -webkit-clip-path: polygon(0 5%, 100% 15%, 100% 25%, 0 15%);
+            }
+
+            75% {
+                clip-path: polygon(0 20%, 100% 15%, 100% 5%, 0 25%);
+                -webkit-clip-path: polygon(0 20%, 100% 15%, 100% 5%, 0 25%);
+            }
+
+            100% {
+                clip-path: polygon(0 15%, 100% 5%, 100% 15%, 0 25%);
+                -webkit-clip-path: polygon(0 15%, 100% 5%, 100% 15%, 0 25%);
+            }
+        }
+
+        @keyframes glitchBottom {
+            0% {
+                clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+                -webkit-clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+            }
+
+            25% {
+                clip-path: polygon(0 65%, 100% 75%, 100% 85%, 0 75%);
+                -webkit-clip-path: polygon(0 65%, 100% 75%, 100% 85%, 0 75%);
+            }
+
+            50% {
+                clip-path: polygon(0 55%, 100% 65%, 100% 75%, 0 65%);
+                -webkit-clip-path: polygon(0 55%, 100% 65%, 100% 75%, 0 65%);
+            }
+
+            75% {
+                clip-path: polygon(0 60%, 100% 65%, 100% 75%, 0 55%);
+                -webkit-clip-path: polygon(0 60%, 100% 65%, 100% 75%, 0 55%);
+            }
+
+            100% {
+                clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+                -webkit-clip-path: polygon(0 65%, 100% 55%, 100% 65%, 0 75%);
+            }
+        }
+    </style>
+    <title>Glitch Font Effect</title>
+</head>
+
+<body>
+    <h1 class="glitch" data-text="TECHNOLOGY">TECHNOLOGY</h1>
+</body>
+
+</html>

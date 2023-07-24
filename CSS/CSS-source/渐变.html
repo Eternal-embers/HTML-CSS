@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <style>
+        .linearGradient {
+            width: 500px;
+            height: 500px;
+            padding: 5px;
+            border: 1px soid black;
+            border-radius: 1.2em;
+            background-image: linear-gradient(52deg, #e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8, #eef09e, #f5ede0);
+        }
+
+        #colors {
+            display: inline-block;
+            border: 1px solid black;
+            padding: 5px 0 5px 5px;
+            margin: 8px;
+            width: 43%;
+            height: auto;
+        }
+
+        i {
+            margin: 8px;
+            font-size: 15px;
+            color: #a0a0a0;
+        }
+
+        i:hover {
+            transform: scale(1.2);
+            color: #606060;
+        }
+
+
+        #code {
+            width: 43%;
+            border: 1px solid #a0a0a0;
+            padding: 8px;
+            margin: 5px;
+            font-size: 13.5px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<html>
+
+<body>
+    <div id="colors">
+        <input type="color" onchange="setColor()" value="#e86464" />
+        <input type="color" onchange="setColor()" value="#df77a4" />
+        <input type="color" onchange="setColor()" value="#c07ae1" />
+        <input type="color" onchange="setColor()" value="#b2aaee" />
+        <input type="color" onchange="setColor()" value="#8fe5e3" />
+        <input type="color" onchange="setColor()" value="#98eca8" />
+        <input type="color" onchange="setColor()" value="#eef09e" />
+        <input type="color" onchange="setColor()" value="#f5ede0" />
+    </div>
+    <i class=" fa-solid fa-plus" onclick="addColor()"></i>
+    <i class="fa-solid fa-minus" onclick="deleteColor()"></i>
+    <i class="fa-solid fa-broom" onclick="clearColor()"></i>
+    <div>
+        <i class="fa-solid fa-clock-rotate-left" onclick="reduceRotateDegree()"></i>
+        <input type="range" min="-360" max="360" value="180" onchange="setRotateDegree()" id="deg" />
+        <span id="showDegree">180deg</span>
+    </div>
+    <div id="code">background-image: linear-gradient(52deg,#e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8,
+        #eef09e, #f5ede0);</div>
+    <div class="linearGradient" id="show">&nbsp;</div>
+</body>
+
+<script>
+    function addColor() {
+        var targetElement = document.getElementById("colors");// 获取目标元素
+        if (targetElement.children.length >= 12) {
+            alert("已达到最大颜色数量！");
+            return;
+        }
+        var newElement = document.createElement("input");// 创建新元素
+        newElement.type = "color";//设置类型
+        newElement.style.marginRight = "4px";
+        newElement.onchange = function () { setColor(); };
+
+        targetElement.appendChild(newElement);
+    }
+
+    function deleteColor() {
+        var targetElement = document.getElementById("colors");// 获取目标元素
+        if (targetElement.children.length <= 1) {
+            alert("已达到最小颜色数量！");
+            return;
+        }
+        targetElement.removeChild(targetElement.lastChild);
+    }
+
+    function clearColor() {
+        var targetElement = document.getElementById("colors");
+        while (targetElement.children.length > 1) {
+            targetElement.removeChild(targetElement.firstChild);
+        }
+        setColor();
+    }
+
+    function setColor() {
+        /* 更新颜色的显示 */
+        var targetElement = document.getElementById("colors");
+        var show = document.getElementById("show");
+        var colors = [];
+        var length = targetElement.children.length;
+        for (var i = 0; i < length; i++) {
+            colors[i] = targetElement.children[i].value;
+        }
+        show.style.backgroundImage = `linear-gradient(${colors.join(', ')})`;
+
+        /* 更新代码 */
+        var code = document.getElementById("code");
+        code.innerHTML = "background-image: " + `linear-gradient(${colors.join(', ')})` + ";";
+    }
+
+    function reduceRotateDegree() {
+        document.getElementById("deg").value -= 1;
+        setRotateDegree();
+    }
+
+    function setRotateDegree() {
+        var degree = document.getElementById("deg").value;
+        var degreeShow = document.getElementById("showDegree").innerHTML = degree + "deg";
+
+        /* 更新颜色显示 */
+        var targetElement = document.getElementById("colors");
+        var show = document.getElementById("show");
+        var colors = [];
+        var length = targetElement.children.length;
+        for (var i = 0; i < length; i++) {
+            colors[i] = targetElement.children[i].value;
+        }
+        show.style.backgroundImage = `linear-gradient(${degreeShow},${colors.join(', ')})`;
+
+        /* 更新代码 */
+        var code = document.getElementById("code");
+        code.innerHTML = "background-image: " + `linear-gradient(${degreeShow},${colors.join(', ')})` + ";";
+    }
+
+</script>
+
+</html>

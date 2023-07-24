@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .module {
+            width: 32%;
+            float: left;
+            height: 136em;
+            margin: 9px;
+            border: 1px solid rgb(180, 180, 180);
+        }
+
+        @keyframes pulse {
+            0% {
+                background-position: -100%;
+            }
+
+            100% {
+                background-position: 200%;
+            }
+        }
+
+        .title {
+            background: linear-gradient(to left, rgb(120, 120, 120) 0%, rgb(120, 120, 120) 20%, rgb(120, 120, 120) 40%, rgb(240, 240, 240) 50%, rgb(120, 120, 120)60%, rgb(120, 120, 120) 80%, rgb(120, 120, 120) 100%);
+            background-size: 150% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: pulse 3s infinite;
+            text-align: center;
+            font-family: STKaiti;
+        }
+
+        .display {
+            width: 90%;
+            margin: auto;
+            padding: 0.8em 0;
+            background-color: rgba(128, 128, 128, 1);
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .input {
+            width: 18em;
+            border: none;
+            outline: none;
+            background-color: hsla(0, 0%, 100%, 0);
+            text-align: center;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+        }
+
+        .drag {
+            margin: 12px;
+        }
+
+        .argument {
+            margin-left: 1.5em;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: "Cambria", "Cochin", Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+        }
+
+        input[type="range"] {
+            width: 61.8%;
+            display: inline-block;
+        }
+
+        .value {
+            text-align: center;
+        }
+
+        .example {
+            display: block;
+            width: 80%;
+            margin: 0.8em auto;
+            padding: 0.6em;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<html>
+
+<body>
+    <div class="module">
+        <h3 class="title">————|RGBA调色器 |————</h3>
+        <div class="display" id="rgba-display">
+            <input value="rgba(127,127,127,1)" class="input" id="rgba" onchange="update('rgba')">
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: red;  margin-right: 1.5em;">red</span>
+            <input type="range"
+                onchange="updateArgument('rgba_red_value',this.value); updateDisplay('rgba'); updatefontColor('rgba',this.value);"
+                min="0" max="255" id="rgba_red" value="127" />
+            <span class="value" id="rgba_red_value">127</span>
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: green; margin-right: 0.5em;">green</span>
+            <input type="range"
+                onchange="updateArgument('rgba_green_value',this.value); updateDisplay('rgba'); updatefontColor('rgba',this.value);"
+                min="0" max="255" id="rgba_green" value="127" />
+            <span class="value" id="rgba_green_value">127</span>
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: blue; margin-right: 1em;">blue</span>
+            <input type="range"
+                onchange="updateArgument('rgba_blue_value',this.value); updateDisplay('rgba'); updatefontColor('rgba',this.value);"
+                min="0" max="255" id="rgba_blue" value="127" />
+            <span class="value" id="rgba_blue_value">127</span>
+        </div>
+        <div class="drag">
+            <span class="argument"
+                style="text-align: center; color: rgba(120, 120, 120, 0.8); margin-right: 1em;">alpha</span>
+            <input type="range"
+                onchange="updateArgument('rgba_alpha_value',this.value); updateDisplay('rgba'); updatefontColor('rgba',this.value);"
+                min="0.0" max="1.0" step="0.1" id="rgba_alpha" value="1" />
+            <span class="value" id="rgba_alpha_value">1</span>
+        </div>
+        <hr />
+        <div class="example" style="background-color: rgba(255, 80, 180, 1);">rgba(255, 80, 180, 1)</div>
+        <div class="example" style="background-color: rgba(255, 130, 255, 1);">rgba(255, 130, 255, 1)</div>
+        <div class="example" style="background-color: rgba(255, 180, 212, 1);">rgba(255, 180, 212, 1)</div>
+        <div class="example" style="background-color: rgba(255, 50, 50,1);">rgba(255, 50, 50,1)</div>
+        <div class="example" style="background-color: rgba(255, 120, 120, 1);">rgba(255, 120, 120, 1)</div>
+        <div class="example" style="background-color: rgba(255, 145, 150, 1);">rgba(255, 145, 150, 1)</div>
+        <did class="example" style="background-color: rgba(255, 180, 180, 1)">rgba(255, 180, 180, 1)</did>
+        <div class="example" style="background-color: rgba(255, 115, 30, 1);">rgba(255, 115, 30, 1)</div>
+        <div class="example" style="background-color: rgba(255, 160, 50, 1);">rgba(255, 160, 50, 1)</div>
+        <div class="example" style="background-color: rgba(255, 200, 100, 1);">rgba(255, 200, 100, 1)</div>
+        <div class="example" style="background-color: rgba(255, 215, 180, 1);">rgba(255, 215, 180, 1)</div>
+        <div class="example" style="background-color: rgba(255, 255, 0, 1);">rgba(255, 255, 0, 1)</div>
+        <div class="example" style="background-color: rgba(255, 255, 150, 1)">rgba(255, 255, 150, 1)</div>
+        <div class="example" style="background-color: rgba(0, 180, 100, 1);">rgba(0, 180, 100, 1)</div>
+        <div class="example" style="background-color: rgba(80, 215, 145, 1);">rgba(80, 215, 145, 1)</div>
+        <div class="example" style="background-color: rgba(100, 255, 180, 1);">rgba(100, 255, 180, 1)</div>
+        <div class="example" style="background-color: rgba(0, 255, 100, 1);">rgba(0, 255, 100, 1)</div>
+        <div class="example" style="background-color: rgba(0, 130, 255, 1);">rgba(0, 130, 255, 1)</div>
+        <div class="example" style="background-color: rgba(60, 160, 255, 1);">rgba(60, 160, 255, 1)</div>
+        <div class="example" style="background-color: rgba(100, 215, 255, 1);">rgba(100, 215, 255, 1)</div>
+        <div class="example" style="background-color: rgba(150, 255, 255, 1);">rgba(150, 255, 255, 1)</div>
+        <div class="example" style="background-color: rgba(120, 80, 255, 1);">rgba(120, 80, 255, 1)</div>
+        <div class="example" style="background-color: rgba(120, 130, 255, 1);">rgba(120, 130, 255, 1)</div>
+        <div class="example" style="background-color: rgba(170, 125, 255, 1);">rgba(170, 125, 255, 1)</div>
+        <div class="example" style="background-color: rgba(180, 160, 255, 1);">rgba(180, 160, 255, 1)</div>
+        <hr />
+        <div class="example" style="background-color: rgba(0, 0, 0, 1); color: white;">rgba(0, 0, 0 ,1)</div>
+        <div class="example" style="background-color: rgba(60, 60, 60, 1); color: white;">rgba(60, 60, 60 ,1)</div>
+        <div class="example" style="background-color: rgba(120, 120, 120, 1); color: white;">rgba(120, 120, 120, 1)
+        </div>
+        <div class="example" style="background-color: rgba(150, 150, 150, 1);">rgba(150, 150, 150, 1)</div>
+        <div class="example" style="background-color: rgba(180, 180, 180, 1);">rgba(180, 180, 180, 1)</div>
+        <div class="example" style="background-color: rgba(210, 210, 210, 1);">rgba(210, 210, 210, 1)</div>
+        <div class="example" style="background-color: rgba(240, 240, 240, 1);">rgba(240, 240, 240, 1)</div>
+        <div class="example"
+            style="background-color: rgba(255, 255, 255, 1); border: 1px dashed rgba(100, 100, 100, 0.5);">
+            rgba(255, 255, 255, 1)</div>
+    </div>
+
+    <div class="module" id="HEX">
+        <h3 class="title">————|HEX调色器 |————</h3>
+        <div class="display" id="hex-display">
+            <input value="#7f7f7f" class="input" id="hex" onchange="update('hex')">
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: red;  margin-right: 1.5em;">red</span>
+            <input type="range"
+                onchange="updateArgument('hex_red_value',parseInt(this.value).toString(16)); updateDisplay('hex'); updatefontColor('hex',this.value);"
+                min="0" max="255" id="hex_red" value="127" />
+            <span class="value" id="hex_red_value">7f</span>
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: green; margin-right: 0.5em;">green</span>
+            <input type="range"
+                onchange="updateArgument('hex_green_value',parseInt(this.value).toString(16)); updateDisplay('hex'); updatefontColor('hex',this.value);"
+                min="0" max="255" id="hex_green" value="127" />
+            <span class="value" id="hex_green_value">7f</span>
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: blue; margin-right: 1em;">blue</span>
+            <input type="range"
+                onchange="updateArgument('hex_blue_value',parseInt(this.value).toString(16)); updateDisplay('hex'); updatefontColor('hex',this.value);"
+                min="0" max="255" id="hex_blue" value="127" />
+            <span class="value" id="hex_blue_value">7f</span>
+        </div>
+        <div class="drag">&nbsp;</div>
+        <hr />
+        <div class="example" style="background-color: #ff5ba8;">#ff5ba8</div>
+        <div class="example" style="background-color: #ff95ff;">#ff95ff</div>
+        <div class="example" style="background-color: #ffbdff;">#ffbdff</div>
+        <div class="example" style="background-color: #ff4b4d;">#ff4b4d</div>
+        <div class="example" style="background-color: #ff6e70;">#ff6e70</div>
+        <div class="example" style="background-color: #ff8590;">#ff8590</div>
+        <div class="example" style="background-color: #ffb1b1;">#ffb1b1</div>
+        <div class="example" style="background-color: #ff7700;">#ff7700</div>
+        <div class="example" style="background-color: #ff8f55;">#ff8f55</div>
+        <div class="example" style="background-color: #ffbd90;">#ffbd90</div>
+        <div class="example" style="background-color: #ffe57d;">#ffe57d</div>
+        <div class="example" style="background-color: #ffe5c0;">#ffe5c0</div>
+        <div class="example" style="background-color: #ffff00;">#ffff00</div>
+        <div class="example" style="background-color: #ffffaa;">#ffffaa</div>
+        <div class="example" style="background-color: #00bb6d;">#00bb6d</div>
+        <div class="example" style="background-color: #28eb94;">#28eb94</div>
+        <div class="example" style="background-color: #00fb39;">#00fb39</div>
+        <div class="example" style="background-color: #0088ff;">#0088ff</div>
+        <div class="example" style="background-color: #00aaff;">#00aaff</div>
+        <div class="example" style="background-color: #4dddff;">#4dddff</div>
+        <div class="example" style="background-color: #77ffff;">#77ffff</div>
+        <div class="example" style="background-color: #8844ff;">#8844ff</div>
+        <div class="example" style="background-color: #8484ff;">#8484ff</div>
+        <div class="example" style="background-color: #aa80ff;">#aa80ff</div>
+        <dvi class="example" style="background-color: #aaaaff;">#aaaaff</dvi>
+        <hr />
+        <div class="example" style="background-color: #000000; color: white;">#000000</div>
+        <div class="example" style="background-color: #3c3c3c; color: white;">#3c3c3c</div>
+        <div class="example" style="background-color: #787878; color: white">#787878</div>
+        <div class="example" style="background-color: #969696;">#969696</div>
+        <div class="example" style="background-color: #b4b4b4;">#b4b4b4</div>
+        <div class="example" style="background-color: #cfcfcf;">#cfcfcf</div>
+        <div class="example" style="background-color: #f0f0f0;">#f0f0f0</div>
+        <div class="example" style="background-color: #ffffff;  border: 1px dashed rgba(100, 100, 100, 0.5);">#ffffff
+        </div>
+    </div>
+
+    <div class="module" id="HSLA">
+        <h3 class="title">————|HSLA调色器 |————</h3>
+        <div class="display" id="hsla-display">
+            <input value="hsla(0, 0%, 50%, 1)" class="input" id="hsla" onchange="update('hsla')" style="color: black;">
+        </div>
+        <div class="drag">
+            <span class="argument"
+                style="text-align: center; color: rgba(120, 120, 120, 0.8); margin-right: 2.7em;">hue</span>
+            <input type="range"
+                onchange="updateArgument('hsla_hue_value',this.value); updateDisplay('hsla'); updatefontColor('hsla',this.value);"
+                min="0" max="360" id="hsla_hue" value="0" />
+            <span class="value" id="hsla_hue_value">0</span>
+        </div>
+        <div class="drag">
+            <span class="argument" style="text-align: center; color: rgba(120, 120, 120, 0.8); ">saturation</span>
+            <input type="range"
+                onchange="updateArgument('hsla_saturation_value',this.value); updateDisplay('hsla'); updatefontColor('hsla',this.value);"
+                min="0" max="100" id="hsla_saturation" value="0" />
+            <span class="value" id="hsla_saturation_value">0</span>%
+        </div>
+        <div class="drag">
+            <span class="argument"
+                style="text-align: center; color: rgba(120, 120, 120, 0.8); margin-right: 0.6em;">lightness</span>
+            <input type="range"
+                onchange="updateArgument('hsla_lightness_value',this.value); updateDisplay('hsla'); updatefontColor('hsla',this.value);"
+                min="0" max="100" id="hsla_lightness" value="50" />
+            <span class="value" id="hsla_lightness_value">50</span>%
+        </div>
+        <div class="drag">
+            <span class="argument"
+                style="text-align: center; color: rgba(120, 120, 120, 0.8); margin-right: 2em;">alpha</span>
+            <input type="range"
+                onchange="updateArgument('hsla_alpha_value',this.value); updateDisplay('hsla'); updatefontColor('hsla',this.value);"
+                min="0.0" max="1.0" step="0.1" id="hsla_alpha" value="1" />
+            <span class="value" id="hsla_alpha_value">1</span>
+        </div>
+        <hr />
+        <div class="example" style="background-color: hsla(320,100%,55%,0.6);">hsla(320,100%,55%,0.6)</div>
+        <div class="example" style="background-color: hsla(320,100%,60%,0.4);">hsla(320,100%,60%,0.4)</div>
+        <div class="example" style="background-color: hsla(319, 100%, 85%, 0.7);">hsla(319, 100%, 85%, 0.7)</div>
+        <div class="example" style="background-color: hsla(0, 100%, 66%, 1);">hsla(0, 100%, 66%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 100%, 50%, 0.5);">hsla(0, 100%, 50%, 0.5)</div>
+        <div class="example" style="background-color: hsla(0, 100%, 70%, 0.6);">hsla(0, 100%, 70%, 0.6)</div>
+        <div class="example" style="background-color: hsla(0, 100%, 80%, 0.5);">hsla(0, 100%, 80%, 0.5)</div>
+        <div class="example" style="background-color: hsla(30, 100%, 50%, 1);">hsla(30, 100%, 50%, 1)</div>
+        <div class="example" style="background-color: hsla(35, 100%, 55%, 1);">hsla(35, 100%, 55%, 1)</div>
+        <div class="example" style="background-color: hsla(25, 100%, 70%, 0.7);">hsla(25, 100%, 70%, 0.7)</div>
+        <div class="example" style="background-color: hsla(60, 100%, 60%, 1);">hsla(60, 100%, 60%, 1)</div>
+        <div class="example" style="background-color: hsla(60, 100%, 60%, 0.5);">hsla(60, 100%, 60%, 0.5)</div>
+        <div class="example" style="background-color: hsla(76, 80%, 70%, 1);">hsla(76, 80%, 70%, 1)</div>
+        <div class="example" style="background-color: hsla(150, 100%, 40%, 1);">hsla(150, 100%, 40%, 1)</div>
+        <div class="example" style="background-color: hsla(130, 100%, 70%, 0.9);">hsla(130, 100%, 70%, 0.9)</div>
+        <div class="example" style="background-color: hsla(140, 100%, 75%, 1);">hsla(140, 100%, 75%, 1)</div>
+        <div class="example" style="background-color: hsla(115, 100%, 60%, 1);">hsla(115, 100%, 60%, 1)</div>
+        <div class="example" style="background-color: hsla(220, 100%, 60%, 1);">hsla(220, 100%, 60%, 1)</div>
+        <div class="example" style="background-color: hsla(212, 100%, 70%, 1);">hsla(212, 100%, 70%, 1)</div>
+        <div class="example" style="background-color: hsla(200, 100%, 70%, 1);">hsla(200, 100%, 70%, 1)</div>
+        <div class="example" style="background-color: hsla(180, 100%, 80%, 1);">hsla(180, 100%, 80%, 1)</div>
+        <div class="example" style="background-color: hsla(250, 100%, 70%, 1);">hsla(250, 100%, 70%, 1)</div>
+        <div class="example" style="background-color: hsla(235, 100%, 80%, 1);">hsla(235, 100%, 80%, 1)</div>
+        <div class="example" style="background-color: hsla(260, 100%, 80%, 1);">hsla(260, 100%, 80%, 1)</div>
+        <div class="example" style="background-color: hsla(255, 100%, 85%, 0.8);">hsla(255, 100%, 85%, 0.8)</div>
+        <hr />
+        <div class="example" style="background-color: hsla(0, 0%, 0%, 1); color: white;">hsla(0, 0%, 0%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 0%, 15%, 1); color: white;">hsla(0, 0%, 15%, 1)
+        </div>
+        <div class="example" style="background-color: hsla(0, 0%, 25%, 1); color: white">hsla(0, 0%, 25%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 0%, 40%, 1); color: white;">hsla(0, 0%, 40%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 0%, 50%, 1); color: white;">hsla(0, 0%, 50%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 0%, 75%, 1);">hsla(0, 0%, 75%, 1)</div>
+        <div class="example" style="background-color: hsla(0, 0%, 90%, 1);">hsla(0, 0%, 90%, 1)</div>
+        <div class="example"
+            style="background-color: hsla(0, 0%, 100%, 1);  border: 1px dashed rgba(100, 100, 100, 0.5);">hsla(0, 0%,
+            100%, 1)</div>
+</body>
+
+<script>
+    function update(module) {
+        if (module.match("rgba")) {
+            var value = document.getElementById("rgba").value;
+            value = value.replaceAll(" ", "").replace("rgba", "").replace("(", "").replace(")", "");
+            var arr = value.split(',');
+            if (arr.length != 4) {
+                alert("RGBA调色器中颜色值的格式错误!\n错误原因:颜色值的参数个数存在问题");
+                return;
+            }
+            if (arr[0] < 0 || arr[0] > 255) {
+                alert("RGBA调色器中的red的值不在正常范围0~255之内!");
+            }
+            if (arr[1] < 0 || arr[1] > 255) {
+                alert("RGBA调色器中的green的值不在正常范围0~255之内!");
+            }
+            if (arr[2] < 0 || arr[2] > 255) {
+                alert("RGBA调色器中的blue的值不在正常范围0~255之内!");
+            }
+            if (arr[3] < 0 || arr[3] > 1) {
+                alert("RGBA调色器中的alpha的值不在正常范围0~1之内!");
+            }
+            /* 更新滑动条的值 */
+            updateValue("rgba_red", arr[0]);
+            updateValue("rgba_green", arr[1]);
+            updateValue("rgba_blue", arr[2]);
+            updateValue("rgba_alpha", arr[3]);
+
+            /* 更新参数值 */
+            updateArgument("rgba_red_value", arr[0]);
+            updateArgument("rgba_green_value", arr[1]);
+            updateArgument("rgba_blue_value", arr[2]);
+            updateArgument("rgba_alpha_value", arr[3]);
+
+            /* 调整展示栏的背景颜色 */
+            document.getElementById(module + "-display").style.backgroundColor = module + `(${arr.join(",")})`;
+
+            /* 调整展示栏的字体颜色 */
+            if ((arr[0] > 127 && arr[1] > 127) || (arr[0] > 127 && arr[1] > 127) || (arr[1] > 127 && arr[2] > 127) || (arr[1] > 191 && (arr[0] < 127 && arr[1] < 127)) || arr[3] <= 0.5)
+                document.getElementById(module).style.color = "black";
+            else if ((arr[0] < 127 && arr[1] < 127) || (arr[0] < 127 && arr[1] < 127) || (arr[1] < 127 && arr[2] < 127))
+                document.getElementById(module).style.color = "white";
+        }
+        else if (module.match("hex")) {
+            var value = document.getElementById("hex").value;
+            value = value.replaceAll(" ", "").replace("#", "");
+
+            /* 判断格式 */
+            if (value.length != 6) {
+                alert("HEX调色器中颜色值的格式错误!\n错误原因: 颜色值的字符数不为6");
+                return;
+            }
+            for (var i = 0; i < 6; i++) {
+                var ch = value.charAt(i);
+                if (!(ch >= '0' && ch <= '9') && !(ch >= 'a' && ch <= 'f')) {
+                    alert("HEX调试器中颜色值的格式错误!\n错误原因: 十六进制数中不可能出现'" + ch + "'");
+                }
+            }
+
+            var arr = [];
+            /* 获取参数 */
+            for (var i = 0; i < 6; i += 2)
+                arr.push(value.substring(i, i + 2));
+
+            /* 更新参数值 */
+            updateArgument("hex_red_value", arr[0]);
+            updateArgument("hex_green_value", arr[1]);
+            updateArgument("hex_blue_value", arr[2]);
+
+            /* 调整展示栏的背景颜色 */
+            document.getElementById(module + "-display").style.backgroundColor = `#${arr.join("")}`;
+
+            /* 转十进制 */
+            for (var i = 0; i < 3; i++)
+                arr[i] = Number("0x" + arr[i]);
+
+            /* 更新滑动条的值 */
+            updateValue("hex_red", arr[0]);
+            updateValue("hex_green", arr[1]);
+            updateValue("hex_blue", arr[2]);
+
+            /* 更新展示栏的字体颜色 */
+            if ((arr[0] > 127 && arr[1] > 127) || (arr[0] > 127 && arr[1] > 127) || (arr[1] > 127 && arr[2] > 127) || (arr[1] > 191 && (arr[0] < 127 && arr[1] < 127)))
+                document.getElementById(module).style.color = "black";
+            else if ((arr[0] < 127 && arr[1] < 127) || (arr[0] < 127 && arr[1] < 127) || (arr[1] < 127 && arr[2] < 127))
+                document.getElementById(module).style.color = "white";
+        }
+        else if (module.match("hsla")) {
+            var value = document.getElementById("hsla").value;
+            value = value.replaceAll(" ", "").replace("hsla", "").replaceAll("%", "").replace("(", "").replace(")", "");
+            var arr = value.split(',');
+            if (arr.length != 4) {
+                alert("HSLA调色器中颜色值的格式错误!\n错误原因:HSLA调色器中颜色值的参数个数错误");
+                return;
+            }
+            if (arr[0] < 0 || arr[0] > 360) {
+                alert("HSLA调色器中的hue的值不在正常范围0~360之内!");
+            }
+            if (arr[1] < 0 || arr[1] > 100) {
+                alert("HSLA调色器中的saturation的值不在正常范围0%~100%之内!");
+            }
+            if (arr[2] < 0 || arr[2] > 100) {
+                alert("HSLA调色器中的lightness的值不在正常范围0%~100%之内!");
+            }
+            if (arr[3] < 0 || arr[3] > 1) {
+                alert("HSLA调色器中的alpha的值不在正常范围0~1之内!");
+            }
+            /* 更新滑动条的值 */
+            updateValue("hsla_hue", arr[0]);
+            updateValue("hsla_saturation", arr[1]);
+            updateValue("hsla_lightness", arr[2]);
+            updateValue("hsla_alpha", arr[3]);
+
+            /* 更新参数值 */
+            updateArgument("hsla_hue_value", arr[0]);
+            updateArgument("hsla_saturation_value", arr[1]);
+            updateArgument("hsla_lightness_value", arr[2]);
+            updateArgument("hsla_alpha_value", arr[3]);
+
+            /* 调整展示栏的字体颜色 */
+            if (arr[2] > 40 || arr[3] < 0.4)
+                document.getElementById(module).style.color = "black";
+            else
+                document.getElementById(module).style.color = "white";
+
+            /* 将saturation和lightness的参数值转百分比 */
+            arr[1] = arr[1] + '%';
+            arr[2] = arr[2] + '%';
+            document.getElementById(module + "-display").style.backgroundColor = module + `(${arr.join(",")})`;
+        }
+    }
+
+    function adjust(value) {
+        if (value.length == 1)
+            return '0' + value;
+        else
+            return value;
+    }
+
+    function updateValue(id, value) {
+        document.getElementById(id).value = value;
+    }
+
+    function updateArgument(id, value) {
+        document.getElementById(id).innerHTML = value;
+    }
+
+    /* 更新颜色展示 */
+    function updateDisplay(module) {
+        var ids;
+        var values = [];
+        if (module.match("rgba")) {
+            ids = ["rgba_red", "rgba_green", "rgba_blue", "rgba_alpha"];//rgba
+            /* 获取对应参数的值 */
+            for (var i = 0; i < ids.length; i++) {
+                values.push(document.getElementById(ids[i]).value);
+            }
+            /* 更新输入框的字体颜色 */
+            var value = module + `(${values.join(',')})`;//获取值
+            document.getElementById(module).value = value;//更新公式
+            document.getElementById(module + "-display").style.backgroundColor = value;//更新背景颜色
+        }
+        else if (module.match("hex")) {
+            ids = ["hex_red", "hex_green", "hex_blue"];//hex
+            /* 获取对应参数的值 */
+            for (var i = 0; i < ids.length; i++) {
+                values.push(adjust(parseInt(document.getElementById(ids[i]).value).toString(16)));
+            }
+            /* 更新输入框的字体颜色 */
+            var value = `#${values.join('')}`;//获取值
+            document.getElementById(module).value = value;//更新公式
+            document.getElementById(module + "-display").style.backgroundColor = value;//更新背景颜色
+        }
+        else if (module.match("hsla")) {
+            ids = ["hsla_hue", "hsla_saturation", "hsla_lightness", "hsla_alpha"];//hsla
+            /* 获取对应参数的值 */
+            values.push(document.getElementById(ids[0]).value);
+            values.push(document.getElementById(ids[1]).value + '%');
+            values.push(document.getElementById(ids[2]).value + '%');
+            values.push(document.getElementById(ids[3]).value);
+
+            /* 更新输入框的字体颜色 */
+            var value = `hsla(${values.join(',')})`;//获取值
+            document.getElementById(module).value = value;//更新公式
+            document.getElementById(module + "-display").style.backgroundColor = value;//更新背景颜色
+        }
+    }
+
+    /* 更新每个展示块的字体颜色 */
+    function updatefontColor(module, value) {
+        /* rgba */
+        if (module.match('rgba')) {
+            var red = document.getElementById("rgba_red").value;
+            var green = document.getElementById("rgba_green").value;
+            var blue = document.getElementById("rgba_blue").value;
+            var alpha = document.getElementById("rgba_alpha").value;
+            if ((red > 127 && green > 127) || (red > 127 && blue > 127) || (green > 127 && blue > 127) || (green > 191 && (red < 127 || blue < 127)) || alpha <= 0.5)
+                document.getElementById(module).style.color = "black";
+            else if ((red < 127 && green < 127) || (red < 127 && blue < 127) || (green < 127 && blue < 127))
+                document.getElementById(module).style.color = "white";
+        }
+        else if (module.match('hex')) {
+            var red = document.getElementById("hex_red").value;
+            var green = document.getElementById("hex_green").value;
+            var blue = document.getElementById("hex_blue").value;
+            if ((red > 127 && green > 127) || (red > 127 && blue > 127) || (green > 127 && blue > 127) || (green > 191 && (red < 127 || blue < 127)))
+                document.getElementById(module).style.color = "black";
+            else if ((red < 127 && green < 127) || (red < 127 && blue < 127) || (green < 127 && blue < 127))
+                document.getElementById(module).style.color = "white";
+        }
+        else if (module.match('hsla')) {
+            var hue = document.getElementById("hsla_hue").value;
+            var saturation = document.getElementById("hsla_saturation").value;
+            var lightness = document.getElementById("hsla_lightness").value;
+            var alpha = document.getElementById("hsla_alpha").value;
+            if (lightness > 40 || alpha < 0.4) {
+                document.getElementById(module).style.color = "black";
+            }
+            else
+                document.getElementById(module).style.color = "white";
+        }
+    }
+</script>
+
+</html>
