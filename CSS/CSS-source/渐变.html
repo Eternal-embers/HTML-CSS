@@ -9,7 +9,7 @@
             padding: 5px;
             border: 1px soid black;
             border-radius: 1.2em;
-            background-image: linear-gradient(52deg, #e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8, #eef09e, #f5ede0);
+            background-image: linear-gradient(45deg, #e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8, #eef09e, #f5ede0);
         }
 
         #colors {
@@ -65,7 +65,7 @@
         <input type="range" min="-360" max="360" value="45" onchange="setRotateDegree()" id="deg" />
         <span id="showDegree">45°</span>
     </div>
-    <div id="code">background-image: linear-gradient(52deg,#e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8,
+    <div id="code">background-image: linear-gradient(45deg,#e86464, #df77a4, #c07ae1, #b2aaee, #8fe5e3, #98eca8,
         #eef09e, #f5ede0);</div>
     <div class="linearGradient" id="show">&nbsp;</div>
 </body>
@@ -106,10 +106,11 @@
         /* 更新颜色的显示 */
         var targetElement = document.getElementById("colors");
         var show = document.getElementById("show");
-        var colors = [];
+        var deg = document.getElementById("deg").value + "deg";
+        var colors = [deg];
         var length = targetElement.children.length;
         for (var i = 0; i < length; i++) {
-            colors[i] = targetElement.children[i].value;
+            colors.push(targetElement.children[i].value);
         }
         show.style.backgroundImage = `linear-gradient(${colors.join(', ')})`;
 
@@ -125,7 +126,8 @@
 
     function setRotateDegree() {
         var degree = document.getElementById("deg").value;
-        var degreeShow = document.getElementById("showDegree").innerHTML = degree + "deg";
+        var degreeShow = degree + "deg";
+        document.getElementById("showDegree").innerHTML = degree + "°";
 
         /* 更新颜色显示 */
         var targetElement = document.getElementById("colors");
