@@ -1,0 +1,67 @@
+#open {
+    float: left;
+    position: relative;
+    top: 0;
+    left: 2vw;
+    z-index: 1;
+}
+
+#open:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+#sidebar {
+    position: relative;
+    float: left;
+    width: 0;
+    height: 80vh;
+    z-index: 1;
+    margin-left: 2%;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    transition: width 1s ease;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0.5vh 1vh 0 0;
+    padding: 0.5vh;
+    display: none;
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.6)
+}
+
+#close:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color: black;
+}
+
+
+#sidebar ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+#sidebar ul li {
+    display: block;
+    text-align: center;
+    font-family: SimSun;
+    font-size: 1em;
+    padding: 10%;
+}
+
+#sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(1px);
+    color: rgb(35, 152, 115);
+}

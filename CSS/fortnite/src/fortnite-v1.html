@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<head>
+    <base target="_blank" />
+    <link rel="stylesheet" href="./font_w1hrxsi7l1s/iconfont.css">
+    <link rel="stylesheet" href="./font_1alybqtosw/iconfont.css">
+    <link rel="stylesheet" href="./font_wct93zp4sb/iconfont.css">
+    <link rel="stylesheet" href="./font_1ai5qjmu865/iconfont.css">
+    <link rel="stylesheet" href="./font_sdybumh4ml/iconfont.css">
+    <link rel="stylesheet" href="./font_gp2paklk2p/iconfont.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <link rel="stylesheet" href="../src/sidebar.css" />
+    <link rel="stylesheet" href="../src/home.css">
+    <link rel="stylesheet" href="../src/map.css">
+    <style>
+        html,
+        body {
+            background-color: rgba(240, 240, 240, 1);
+            scroll-behavior: smooth;
+            margin: 1vh 0;
+            padding: 0;
+        }
+
+        .pages {
+            position: relative;
+            display: block;
+        }
+
+        .pre #map {
+            display: none;
+        }
+
+        #roles {
+            display: none;
+        }
+
+        #weapon {
+            display: none;
+        }
+
+        #CG {
+            display: none;
+        }
+
+        #chinesize {
+            display: none;
+        }
+    </style>
+</head>
+
+
+<html>
+
+<body>
+    <div onclick="openSidebar();" id="open">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div id="sidebar">
+        <div onclick="closeSidebar();" id="close">&#10005;</div>
+        <br />
+        <ul>
+            <li onclick="switchPage('home');"><i class="fa-solid fa-house"></i>主页</li>
+            <li onclick="switchPage('map');"><i class="fa-solid fa-map"></i>地图</li>
+            <li onclick="switchPage('roles');"><span class="iconfont icon-role"></span>角色</li>
+            <li onclick="switchPage('weapon');"><span class="iconfont icon-jian" style="font-weight: bold;"></span>武器
+            </li>
+            <li onclick=" switchPage('CG');"><i class="fa-brands fa-youtube"></i>游戏CG</li>
+            <li onclick="switchPage('chinesize');" style="border-right: none;">
+                <span class="iconfont icon-zidian"></span>汉化
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="pages">
+        <div id="home">
+            <div class="searchbar">
+                <a href="https://store.epicgames.com/zh-CN/p/fortnite">
+                    <img class="logo" src="../Resource/img/Logo_Horizontal_Black.png" />
+                </a>
+                <input class="search" type="search" placeholder="请输入搜索内容">
+                <button type="submit" class="search_icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            <div class="head" style="left: 6%;">游戏介绍</div>
+            <div class="introduction">
+                <p>探索宏大环境，尽情随心破坏，享受永远不重样的游戏。不管是选择在《Fortnite》Battle Royale（空降行动）中一边建造一边战斗，还是在全新的《Fortnite》Zero Build
+                    中抛开建造要素，你都需要呼朋唤友，冲刺攀爬并一路交战，方能达成对战胜利。</p>
+                <p>成千上万创作者打造的游戏等你探索，冒险、角色扮演、生存等等各种类型在向你招手。或者与最多 3 位好友共同加入 Save the World（守护家园），击退一波又一波的怪物。</p>
+                <p style="font-weight: bold;">《Fortnite》第四章第三季</p>
+                <img src="../Resource/img/chapter4-season3.jpeg" />
+                <p>The Wilds 在 Battle
+                    Royale（空降行动）第四章第三季中等待着你。岛屿的中心已经坍塌，露出了隐藏其中，拥有各种秘密的葱郁雨林！跃升于篷顶之上，骑乘暴龙，并在泥巴中高速隐蔽地滑行。从篷顶上使用“Thermal
+                    DMR”来发现敌人，在藤蔓之上一边滑行，一边使用“Flapjack Rifle”火力全开。你还可以使用“Cybertron Cannon”让你的对手退居二线，变成你的观众。</p>
+                <p>以第四章第三季的传世经典 Battle Pass 服装来装扮自己。只要购买第四章第三季的 Battle Pass，便可自动解锁未来感十足的“Era”。推进 Battle Pass
+                    的进度，便可解锁包含摇滚守林人“Rian”以及汽车人首领“Optimus Prime”在内的服装。而随着赛季推进，狂野的“Purradise Meowscles”也将可以通过 Battle Pass
+                    来解锁！</p>
+                <p>你可以在 Battle Royale（空降行动）和 Zero Build 模式中获得 Battle Pass XP。但你知道吗？你也可以在特定创作者打造的游戏中获得 XP。可以获得 XP
+                    的创作者打造游戏将会在 Discover
+                    页面的描述中以一个 XP 徽章代表。随心游玩，来解锁 Rian，Optimus Prime 以及更多内容！</p>
+                <p style="font-weight: bold;">随心畅玩！</p>
+                <p>不管是选择在《Fortnite》Battle Royale（空降行动）中一边建造一边战斗，还是在《Fortnite》Zero Build
+                    中抛开建造要素；你都需要冲刺，攀爬，并一路交战，方能成为对战胜利。</p>
+                <img src="../Resource/img/fortnite BATTLE ROYALE.jpg">
+                <p style="font-weight: bold;">在《Fortnite》Zero Build - No Build Battle Royale（空降行动）中展开攻势</p>
+                <p>随着《Fortnite》Zero Build 的推出，无建筑 Battle Royale（空降行动）现已来到《Fortnite》。在《Fortnite》Zero Build
+                    中，直面战斗，秀出你的精准射击，迅捷思考，以及明确的空间感。</p>
+                <p>在 Zero Build 中，由于没有建筑元素，全部玩家都会有自动充能的 Overshield
+                    作为自己的第一道防线。滑下山坡以躲避敌方火力，或通过边缘攀爬来占领高地，抢得先机。别忘了通过冲刺来在掩体之间移动，才能成为对战胜利！</p>
+                <img src="../Resource/img/Build zero1.png">
+                <p style="font-weight: bold;">Zero Build 是对武器，物品以及移动技巧的纯正测试，无需任何建筑。</p>
+                <p>Zero Build 是对武器，物品以及移动能力的纯正测试。Zero Build 可以在 Discover 页面的 Solo，Duos，Trios 以及 Squads
+                    游玩列表中找到。（通过在大厅中点击“PLAY!”按钮之上的“CHANGE”按钮，来切换到 Discover 页面。）</p>
+                <p>《Fortnite》Zero Build 与《Fortnite》Battle Royale（空降行动）共享 XP 进度与任务，这代表不管你游玩《Fortnite》Zero Build
+                    还是《Fortnite》Battle
+                    Royale，都可以为你的 Battle Pass 赢取 XP。迎接全新挑战，一路升级吧！</p>
+                <img src="../Resource/img/Build zero2.jpg">
+                <p style="font-weight: bold;">战斗。建造。创作。</p>
+                <p>在《Fortnite》中免费和朋友们尽情创作，游玩，战斗。于 Battle Royale（空降行动）以及 Zero Build
+                    模式中，成为最后幸存的赢家。探索音乐会与直播活动，体验由超过一百万名创作者制作的赛车、跑酷、丧尸生存类游戏和更多内容。以上所有精彩内容尽在《Fortnite》！</p>
+            </div>
+            <h2 class="season">————|Chapter4 &nbsp;Season3|————</h2>
+            <div class=" image_container">
+                <button class="back" onclick="translateX(1);">&#10094;</button>
+                <button class="next" onclick="translateX(-1);">&#10095;</button>
+                <div class="images">
+                    <video src="../Resource/CG/第四夜第三赛季：联动变形金刚.mp4" poster="../Resource/img/chapter4-season3.jpeg"
+                        controls></video>
+                    <video src="../Resource/CG/第四夜第三赛季官方正式宣传片.mp4" poster="../Resource/img/picture8.jpeg"
+                        controls></video>
+                    <img src="../Resource/img/picture1.jpg">
+                    <img src="../Resource/img/picture2.jpg">
+                    <img src="../Resource/img/picture3.jpg">
+                    <img src=" ../Resource/img/picture4.jpg">
+                    <img src="../Resource/img/picture5.jpg">
+                    <img src="../Resource/img/picture6.jpg">
+                    <img src="../Resource/img/picture7.jpg">
+                    <img src="../Resource/img/picture8.jpeg">
+                </div>
+            </div>
+
+            <div class="preview_container">
+                <hr /><br />
+                <button class="preview_next" onclick="next(1);">&#10094;</button>
+                <button class="preview_back" onclick="next(-1);">&#10095;</button>
+                <div class="preview">
+                    <video src="../Resource/CG/第四夜第三赛季：联动变形金刚.mp4" poster="../Resource/img/chapter4-season3.jpeg"
+                        onclick="jump(0)" style="filter: brightness(1) contrast(1);"></video>
+                    <i class="iconfont icon-bofang"
+                        style="position: absolute; top: 45%; left: 10%; font-size: 1.5vw; color:white"></i>
+                    <video src="../Resource/CG/第四夜第三赛季官方正式宣传片.mp4" poster="../Resource/img/picture8.jpeg"
+                        onclick="jump(-1)"></video>
+                    <i class="iconfont icon-bofang"
+                        style="position: absolute; top: 45%; left: 30%; font-size: 1.5vw; color:white"></i>
+                    <img src="../Resource/img/picture1.jpg" onclick="jump(-2)">
+                    <img src="../Resource/img/picture2.jpg" onclick="jump(-3)">
+                    <img src="../Resource/img/picture3.jpg" onclick="jump(-4)">
+                    <img src="../Resource/img/picture4.jpg" onclick="jump(-5)">
+                    <img src="../Resource/img/picture5.jpg" onclick="jump(-6)">
+                    <img src="../Resource/img/picture6.jpg" onclick="jump(-7)">
+                    <img src="../Resource/img/picture7.jpg" onclick="jump(-8)">
+                    <img src="../Resource/img/picture8.jpeg" onclick="jump(-9)">
+                </div>
+                <br />
+                <hr />
+            </div>
+
+            <div class="download">
+                <div class="head">游戏下载</div>
+                <p>Fortnite必须通过Epic客户端进行启动，如果您想体验Fortnite，需要下载Epic客户端：</p>
+                <div>
+                    <span class="iconfont icon-xiazai"></span>&nbsp;
+                    <a href="https://launcher-public-service-prod06.ol.epicgames.com/launcher/api/installer/download/EpicGamesLauncherInstaller.msi?trackingId=a4be833451cb45049cbc4116294979a0"
+                        target="_self">
+                        下载Epic游戏商城<span class="iconfont icon-epicgames"></span>
+                    </a>
+                    <span class="download_text">大小：176MB</span>
+                </div>
+            </div>
+            <div class="download">
+                <p>堡垒之夜可以在Epic客户端进行安装,安装大小约30GB左右，安装游戏前请仔细检查电脑配置是否合格：</p>
+                <div class="config">
+                    <span
+                        onclick="document.getElementById('config').setAttribute('src','../Resource/img/最低配置.png'); switchOption(this); ">
+                        Windows最低配置
+                    </span>
+                    <span
+                        onclick="document.getElementById('config').setAttribute('src','../Resource/img/推荐配置.png'); switchOption(this);">Windows推荐配置</span>
+                    <span
+                        onclick="document.getElementById('config').setAttribute('src','../Resource/img/UEFN.png'); switchOption(this);">Windows-UEFN</span>
+                </div>
+                <img id="config" src="../Resource/img/最低配置.png">
+            </div>
+        </div>
+
+
+
+
+        <div id="map">
+            <div class="time">
+                选择章节:
+                <li class="fa-solid fa-angle-down" onclick="Menu()"></li>
+                <span class="chapter">第四章节</span>
+                <ul id="menu">
+                    <li>第一赛季</li>
+                    <li>第二赛季</li>
+                    <li>第三赛季</li>
+                    <li>第四赛季</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="roles">
+        <div>roles</div>
+    </div>
+
+    <div id="weapon">
+        <div>weapon</div>
+    </div>
+
+    <div id="CG">
+        <div>CG</div>
+    </div>
+
+    <div id="chinesize">
+        <div>chinesize</div>
+    </div>
+    </div>
+
+</body>
+<script src="../src/sidebar.js"></script>
+<script src="../src/home.js"></script>
+<script>
+    function switchPage(page) {
+        var pages = ['home', 'map', 'roles', 'weapon', 'CG', 'chinesize'];
+        for (let i = 0; i < 6; i++) {
+            var obj = document.getElementById(pages[i]);
+            if (pages[i].indexOf(page) != -1)
+                obj.style.display = "flex";
+            else
+                obj.style.display = "none";
+        }
+    }
+
+
+    var lastScrollTop = 0;
+    window.addEventListener('scroll', function () {
+        var height = document.getElementById('sidebar').offsetHeight;//侧边栏高度，不包括外边距
+        var currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        /* 用户正在下滑，上一次页面距离最顶部高度小于侧边栏高度，且当前页面顶部距离最顶部距离超过侧边栏高度时，自动关闭侧边栏 */
+        if (currentScrollTop > lastScrollTop && lastScrollTop < height && currentScrollTop >= height) {
+            closeSidebar();
+        }
+        lastScrollTop = currentScrollTop;
+    });
+
+    /*
+    var search = document.querySelector('button .search_icon');
+    alert(search.value);
+    search.addEventListener('submit', function (event) {
+        event.preventDefault(); // 阻止表单默认的提交行为
+        var value = search.value; // 获取搜索框的值
+        alert("你搜索的内容是：" + value); // 处理搜索框的值，例如弹出提示框
+    })
+    */
+
+    var on = 1;
+    function Menu() {
+        if (on == 1)
+            document.getElementById('menu').style.display = "block";
+        else
+            document.getElementById('menu').style.display = "none";
+        on = -on;
+    }
+</script>
+
+
+
+</html>

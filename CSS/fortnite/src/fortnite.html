@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<head>
+    <base target="_blank" />
+    <style>
+        .navigation {
+            width: 90vw;
+            margin: 3vh auto 0 auto;
+        }
+
+        .Logo {
+            float: left;
+            margin-right: 1vw;
+        }
+
+        .navigation ul {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            border: 0.1vh solid rgba(60, 60, 60, 0.6);
+            background-image: linear-gradient(90deg, rgba(236, 152, 152, 0.5), rgba(143, 160, 230, 0.5), rgba(95, 196, 221, 0.5), rgba(66, 205, 158, 0.5), rgba(163, 211, 90, 0.5), rgba(224, 229, 148, 0.5));
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .navigation ul li {
+            color: black;
+            width: 8vw;
+            text-align: center;
+            border-right: 0.1vh solid rgba(60, 60, 60, 0.6);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 1.5vw;
+            padding: 2vh 3vw;
+            margin: 0;
+        }
+
+        .navigation li:hover {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .pages {
+            clear: both;
+        }
+
+        #home {}
+
+        #home_content {
+            position: relative;
+        }
+
+        .image_container {
+            transform: scale(0.9);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .back,
+        .next {
+            position: absolute;
+            z-index: 1;
+            width: 8%;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.5);
+            border: none;
+            font-size: 2vw;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .back:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .back {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .images {
+            display: flex;
+            width: 100%;
+            margin: 0;
+            flex-flow: row nowrap;
+            align-items: center;
+            transform: translate(0);
+        }
+
+        .images img {
+            width: 100%;
+        }
+
+        #map {
+            display: none;
+        }
+
+        #roles {
+            display: none;
+        }
+
+        #weapon {
+            display: none;
+        }
+
+        #CG {
+            display: none;
+        }
+
+        #chinesize {
+            display: none;
+        }
+    </style>
+</head>
+
+
+<html>
+
+<body>
+    <div class="navigation">
+        <img class="Logo" src="../Resource/img/Logo_Horizontal_Black.png" alt="fortnite" width="12%" height="12%" />
+        <ul>
+            <li onclick="switchPage('home');">主页</li>
+            <li onclick="switchPage('map');">地图</li>
+            <li onclick="switchPage('roles');">角色</li>
+            <li onclick="switchPage('weapon');">武器</li>
+            <li onclick="switchPage('CG');">CG</li>
+            <li onclick="switchPage('chinesize');" style="border-right: none;">汉化</li>
+        </ul>
+    </div>
+
+    <div class="pages">
+        <div id="home">
+            <div class="home_content">
+
+                <div class="image_container">
+                    <button class="back" onclick="translateX(1);">&#10094;</button>
+                    <button class="next" onclick="translateX(-1);">&#10095;</button>
+                    <div class="images">
+                        <img src="../Resource/img/picture1.jpg">
+                        <img src="../Resource/img/picture2.jpg">
+                        <img src="../Resource/img/picture3.jpg">
+                        <img src="../Resource/img/picture4.jpg">
+                        <img src="../Resource/img/picture5.jpg">
+                        <img src="../Resource/img/picture6.jpg">
+                        <img src="../Resource/img/picture7.jpg">
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div id="map">
+            <div class="chapter1"></div>
+        </div>
+
+        <div id="roles">
+            <div>roles</div>
+        </div>
+
+        <div id="weapon">
+            <div>weapon</div>
+        </div>
+
+        <div id="CG">
+            <div>CG</div>
+        </div>
+
+        <div id="chinesize">
+            <div>chinesize</div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function switchPage(page) {
+        var pages = ['home', 'map', 'roles', 'weapon', 'CG', 'chinesize'];
+        for (var i = 0; i < 6; i++) {
+            var obj = document.getElementById(pages[i]);
+            console.log(obj.id + " " + obj.style.display);
+            if (pages[i].indexOf(page) != -1)
+                obj.style.display = "block";
+            else {
+                obj.style.display = "none";
+            }
+        }
+    }
+    var index = 0;
+    function translateX(shift) {
+        var images = document.querySelector('div.images');
+        var length = images.children.length;
+        index += shift;
+        if (index <= -length) index = 0;
+        if (index > 0) index = -(length - 1);
+        images.style.transform = `translateX(${index * 100}%)`;
+    }
+</script>
+
+
+
+</html>
