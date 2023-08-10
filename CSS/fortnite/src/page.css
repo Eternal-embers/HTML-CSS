@@ -1,0 +1,43 @@
+.pages {
+    position: relative;
+    display: block;
+    margin-bottom: 2vh;
+}
+
+#moon,
+#sun {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1.2vw;
+    z-index: 1;
+    display: block;
+    font-size: 1vw;
+}
+
+#moon:hover,
+#sun:hover {
+    color: rgb(9, 131, 109);
+    transform: scale(1.5);
+    transition: transform 0.5s;
+}
+
+.pre #map {
+    display: none;
+}
+
+#roles {
+    display: none;
+}
+
+#weapon {
+    display: none;
+}
+
+#CG {
+    display: none;
+}
+
+#chinesize {
+    display: none;
+}
