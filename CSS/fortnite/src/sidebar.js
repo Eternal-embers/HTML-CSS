@@ -1,4 +1,4 @@
-closeSidebar();
+/* 打开侧边栏 */
 function openSidebar() {
     var open = document.getElementById('open');
     var sidebar = document.getElementById('sidebar');
@@ -17,6 +17,8 @@ function openSidebar() {
     index = 0;
 }
 
+/* 关闭侧边栏 */
+closeSidebar();//默认关闭
 function closeSidebar() {
     var open = document.getElementById('open');
     var sidebar = document.getElementById('sidebar');

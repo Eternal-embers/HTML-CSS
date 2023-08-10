@@ -1,3 +1,4 @@
+/* 将图片和视频的展览进行切换 */
 var index = 0;//第一张图的序号为0
 function translateX(shift) {
     var videos = document.querySelectorAll('div.images video');
@@ -30,6 +31,7 @@ function translateX(shift) {
 
 }
 
+/* 跳转到某个位置的图片或视频 */
 var cur = 0;
 function jump(position) {
     var videos = document.querySelectorAll('div.images video');
@@ -61,6 +63,7 @@ function jump(position) {
     }
 }
 
+/* 切换预览图的下一组或上一组 */
 var maxGroup = 2;//预览图的最大分组数
 var group = 0;//初始组从0开始
 function next(step) {
@@ -80,6 +83,7 @@ function next(step) {
     }
 }
 
+/* 切换游戏所需配置的选项 */
 switchOption(document.querySelector('div.config span'));
 function switchOption(element) {
     var option = document.querySelectorAll('div.config span');

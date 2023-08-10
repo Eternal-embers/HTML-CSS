@@ -1,17 +1,20 @@
+/* 菜单栏的图标 */
 #open {
     float: left;
     position: relative;
-    top: 0;
-    left: 2vw;
+    top: 0.8vw;
+    left: 1.5vw;
     z-index: 1;
     font-size: 1vw;
 }
 
 #open:hover {
-    cursor: e-resize;
+    cursor: pointer;
     transform: scale(1.5);
+    transition: transform 0.5s;
 }
 
+/* 侧边栏 */
 #sidebar {
     position: relative;
     float: left;
@@ -19,11 +22,13 @@
     height: 80vh;
     z-index: 1;
     margin-left: 2%;
-    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 2%;
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(50px);
     transition: width 1s ease;
 }
 
+/* 关闭侧边栏的图标 */
 #close {
     position: absolute;
     top: 0;
@@ -32,18 +37,19 @@
     margin: 0.5vh 1vh 0 0;
     padding: 0.5vh;
     display: none;
-    font-size: 1.2vw;
+    font-size: 1vw;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.6)
 }
 
 #close:hover {
     cursor: pointer;
-    transform: scale(1.2);
     color: black;
+    transform: scale(1.5);
+    transition: transform 0.5s;
 }
 
-
+/* 侧边栏中的导航列表 */
 #sidebar ul {
     display: flex;
     flex-direction: column;
@@ -53,10 +59,12 @@
     list-style-type: none;
 }
 
+/* 导航中的图标 */
 #sidebar span {
     font-size: 1em;
 }
 
+/* 导航的各项 */
 #sidebar ul li {
     text-align: center;
     font-family: SimSun;
@@ -65,7 +73,7 @@
 }
 
 #sidebar ul li:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(60, 60, 60, 1);
     backdrop-filter: blur(1px);
     color: rgb(35, 152, 115);
 }
