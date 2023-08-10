@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../src/sidebar.css" />
     <link rel="stylesheet" href="../src/home.css" />
     <link rel="stylesheet" href="../src/map.css" />
+    <link rel="stylesheet" href="../src/roles.css" />
     <style>
         html,
         body {
@@ -58,10 +59,20 @@
                 <a href="https://store.epicgames.com/zh-CN/p/fortnite">
                     <img class="logo" src="../Resource/img/Logo_Horizontal_Black.png" />
                 </a>
-                <input class="search" type="search" placeholder="请输入搜索内容">
-                <button type="submit" class="search_icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+                <form target="_self">
+                    <datalist id="list">
+                        <option>游戏下载</option>
+                        <option>地图</option>
+                        <option>角色</option>
+                        <option>武器</option>
+                        <option>游戏CG</option>
+                        <option>汉化</option>
+                    </datalist>
+                    <input class="search" type="search" placeholder="请输入搜索内容" list="list">
+                    <button type="submit" class="search_icon" onclick="search(event)">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
             </div>
             <div class="head" style="left: 6%;">游戏介绍</div>
             <div class="introduction">
@@ -173,9 +184,6 @@
                 <img id="config" src="../Resource/img/最低配置.png">
             </div>
         </div>
-
-
-
 
         <div id="map">
             <div class="time">
@@ -297,20 +305,184 @@
         </div>
 
         <div id="roles">
-            <div>roles</div>
+            <div></div>
+            <div class="filter">
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+            </div>
+            <script>
+                var options = [
+                    "Chapter 2 Season 1",
+                    "Chapter 2 Season 2",
+                    "Chapter 2 Season 3",
+                    "Chapter 2 Season 4",
+                    "Chapter 2 Season 5",
+                    "Chapter 2 Season 6",
+                    "Chapter 2 Season 7",
+                    "Chapter 2 Season 8",
+                    "Chapter 3 Season 1",
+                    "Chapter 3 Season 2",
+                    "Chapter 3 Season 3",
+                    "Chapter 3 Season 4",
+                    "Chapter 4 Season 1",
+                    "Chapter 4 Season 2",
+                    "Chapter 4 Season 3",
+                    "Fortnite Crew",
+                    "Other",
+                ];
+                var input = document.querySelectorAll('div.filter input');
+                var label = document.querySelectorAll('div.filter label');
+                var length = input.length;
+                for (var i = 0; i < length; i++) {
+                    input[i].value = options[i];
+                    input[i].setAttribute('id', "filter" + i);
+                    label[i].innerHTML = options[i];
+                    label[i].setAttribute('for', "filter" + i);
+                    //label.onclick = `toggleCheckbox(${input[i].id})`;
+                }
+                /*
+                function toggleCheckbox(id) {
+                    var checkbox = document.getElementById(id);
+                    checkbox.checked = !checkbox.checked;
+                }
+                */
+            </script>
+            <div class="roles_Container">
+                <a><img data-tag="Fortnite Crew" title="23BR_Outfit_Rift_Knight_Kieran" /></a>
+                <a><img data-tag="Fortnite Crew" title="24BR_Outfit_Styx" /></a>
+                <a><img data-tag="Fortnite Crew" title="24BR_Outfit_Styx_ReactiveOn" /></a>
+                <a><img data-tag="Fortnite Crew" title="Alli" /></a>
+                <a><img data-tag="Fortnite Crew" title="Deimos Variant Glow" /></a>
+                <a><img data-tag="Fortnite Crew" title="Deimos Variant" /></a>
+                <a><img data-tag="Fortnite Crew" title="Deimos" /></a>
+                <a><img data-tag="Fortnite Crew" title="DespairM" /></a>
+                <a><img data-tag="Fortnite Crew" title="DespairM_NoMask" /></a>
+                <a><img data-tag="Fortnite Crew" title="ForsakeF" /></a>
+                <a><img data-tag="Fortnite Crew" title="Galaxia Variant" /></a>
+                <a><img data-tag="Fortnite Crew" title="Galaxia" /></a>
+                <a><img data-tag="Fortnite Crew" title="Llambro" /></a>
+                <a><img data-tag="Fortnite Crew" title="Mecha Cuddle Master Dark" /></a>
+                <a><img data-tag="Fortnite Crew" title="Mecha Cuddle Master Light" /></a>
+                <a><img data-tag="Fortnite Crew" title="Mecha Cuddle Master" /></a>
+                <a><img data-tag="Fortnite Crew" title="Mecha Strike Commander" /></a>
+                <a><img data-tag="Fortnite Crew" title="Summer Skye (with Hat)" /></a>
+                <a><img data-tag="Fortnite Crew" title="Summer Skye" /></a>
+                <a><img data-tag="Fortnite Crew" title="The Burning Wolf" /></a>
+                <a><img data-tag="Fortnite Crew" title="Vi" /></a>
+            </div>
         </div>
+        <script>
+            var paths = [
+                "../Resource/outfit/Fortnite Crew/23BR_Outfit_Rift_Knight_Kieran.png",
+                "../Resource/outfit/Fortnite Crew/24BR_Outfit_Styx.png",
+                "../Resource/outfit/Fortnite Crew/24BR_Outfit_Styx_ReactiveOn.png",
+                "../Resource/outfit/Fortnite Crew/Alli.png",
+                "../Resource/outfit/Fortnite Crew/Deimos Variant Glow.png",
+                "../Resource/outfit/Fortnite Crew/Deimos Variant.png",
+                "../Resource/outfit/Fortnite Crew/Deimos.png",
+                "../Resource/outfit/Fortnite Crew/DespairM.png",
+                "../Resource/outfit/Fortnite Crew/DespairM_NoMask.png",
+                "../Resource/outfit/Fortnite Crew/ForsakeF.png",
+                "../Resource/outfit/Fortnite Crew/Galaxia Variant.png",
+                "../Resource/outfit/Fortnite Crew/Galaxia.png",
+                "../Resource/outfit/Fortnite Crew/Llambro.png",
+                "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master Dark.png",
+                "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master Light.png",
+                "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master.png",
+                "../Resource/outfit/Fortnite Crew/Mecha Strike Commander.png",
+                "../Resource/outfit/Fortnite Crew/Summer Skye (with Hat).png",
+                "../Resource/outfit/Fortnite Crew/Summer Skye.png",
+                "../Resource/outfit/Fortnite Crew/The Burning Wolf.png",
+                "../Resource/outfit/Fortnite Crew/Vi.png",
 
-        <div id="weapon">
-            <div>weapon</div>
-        </div>
+            ]
+            var length = paths.length;
+            var links = document.querySelectorAll('div.roles_Container a');
+            var roles = document.querySelectorAll('div.roles_Container img');
+            for (var i = 0; i < length; i++) {
+                links[i].setAttribute('href', paths[i]);
+                roles[i].setAttribute('src', paths[i]);
+            }
+        </script>
+    </div>
 
-        <div id="CG">
-            <div>CG</div>
-        </div>
+    <div id="weapon">
+        <div>weapon</div>
+    </div>
 
-        <div id="chinesize">
-            <div>chinesize</div>
-        </div>
+    <div id="CG">
+        <div>CG</div>
+    </div>
+
+    <div id="chinesize">
+        <div>chinesize</div>
+    </div>
     </div>
 
 </body>
@@ -355,15 +527,11 @@
     }
     pageMode();//切换为白天模式
 
-    /*
-    var search = document.querySelector('button .search_icon');
-    alert(search.value);
-    search.addEventListener('submit', function (event) {
+    function search(event) {
         event.preventDefault(); // 阻止表单默认的提交行为
-        var value = search.value; // 获取搜索框的值
-        alert("你搜索的内容是：" + value); // 处理搜索框的值，例如弹出提示框
-    })
-    */
+        var value = document.querySelector("input.search").value;
+        alert(value);
+    }
 </script>
 
 
