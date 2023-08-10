@@ -90,13 +90,11 @@
 }
 
 .image_container {
-    margin: 0;
-    padding: 0;
-}
-
-.image_container {
+    position: relative;
     transform: scale(0.9);
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .season {
@@ -143,6 +141,8 @@
     position: relative;
     display: flex;
     flex-direction: row nowrap;
+    align-items: center;
+    flex-shrink: 0;
     transform: translateX(0);
     transition: transform 2s;
 }
@@ -154,9 +154,11 @@
 }
 
 .images video {
-    position: relative;
     width: 100%;
     height: 100%;
+    /* 防止视频播放后尺寸缩小 */
+    min-width: 100%;
+    min-height: 100%;
 }
 
 .preview_container {

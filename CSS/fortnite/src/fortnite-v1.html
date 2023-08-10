@@ -59,13 +59,14 @@
         <div onclick="closeSidebar();" id="close">&#10005;</div>
         <br />
         <ul>
-            <li onclick="switchPage('home');"><i class="fa-solid fa-house"></i>主页</li>
-            <li onclick="switchPage('map');"><i class="fa-solid fa-map"></i>地图</li>
-            <li onclick="switchPage('roles');"><span class="iconfont icon-role"></span>角色</li>
-            <li onclick="switchPage('weapon');"><span class="iconfont icon-jian" style="font-weight: bold;"></span>武器
+            <li onclick="switchPage('home'); closeSidebar();"><i class="fa-solid fa-house"></i>主页</li>
+            <li onclick="switchPage('map'); closeSidebar();"><i class="fa-solid fa-map"></i>地图</li>
+            <li onclick="switchPage('roles'); closeSidebar();"><span class="iconfont icon-role"></span>角色</li>
+            <li onclick="switchPage('weapon'); closeSidebar();">
+                <span class="iconfont icon-jian" style="font-weight: bold;"></span>武器
             </li>
-            <li onclick=" switchPage('CG');"><i class="fa-brands fa-youtube"></i>游戏CG</li>
-            <li onclick="switchPage('chinesize');" style="border-right: none;">
+            <li onclick=" switchPage('CG'); closeSidebar();"><i class="fa-brands fa-youtube"></i>游戏CG</li>
+            <li onclick="switchPage('chinesize'); closeSidebar();" style="border-right: none;">
                 <span class="iconfont icon-zidian"></span>汉化
             </li>
         </ul>
@@ -200,33 +201,134 @@
         <div id="map">
             <div class="time">
                 选择章节:
-                <li class="fa-solid fa-angle-down" onclick="Menu()"></li>
+                <li class="fa-solid fa-angle-down" id="downMenu"></li>
                 <span class="chapter">第四章节</span>
                 <ul id="menu">
-                    <li>第一赛季</li>
-                    <li>第二赛季</li>
-                    <li>第三赛季</li>
-                    <li>第四赛季</li>
+                    <li onclick="switchChapter(this,1)">第一章节</li>
+                    <li onclick="switchChapter(this,2)">第二章节</li>
+                    <li onclick="switchChapter(this,3)">第三章节</li>
+                    <li onclick="switchChapter(this,4)">第四章节</li>
                 </ul>
             </div>
+            <div class="map-continer">
+                <div class="map-image">
+                    <div id="chapter1" class="gallery">
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                    </div>
+                    <script>
+                        //批量添加图片
+                        var path = [
+                            "../Resource/minMap/chapter 1/Season 5/S5_Minimap_NoNames.jpg",
+                            "../Resource/minMap/chapter 1/Season 6/TR_BR06_Social_Minimap.jpg",
+                            "../Resource/minMap/chapter 1/Season 7/BR_Season7_Map.png",
+                            "../Resource/minMap/chapter 1/Season 8/Season8_Minimap_Blank.png",
+                            "../Resource/minMap/chapter 1/Season 9/Season 9 Minimap (TR).jpg",
+                            "../Resource/minMap/chapter 1/Season x/Season X Minimap (Blank).png"
+                        ]
+                        var chapter1 = document.getElementById('chapter1');
+                        var imgs = document.querySelectorAll("#chapter1 img");
+                        var length = path.length;
+                        for (var i = 0; i < length; i++) {
+                            imgs[i].src = path[i];
+                            imgs[i] = new Image();
+                        }
+                    </script>
+                    <div id="chapter2" class="gallery">
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                    </div>
+                    <script>
+                        //批量添加图片
+                        var path = [
+                            "../Resource/minMap/chapter 2/season 1/Chapter 2 Season 1 Minimap (Blank).jpg",
+                            "../Resource/minMap/chapter 2/season 2/Chapter 2 Season 2 Minimap (Blank).jpg",
+                            "../Resource/minMap/chapter 2/season 3/Chapter 2 Season 3 Minimap (TW).jpg",
+                            "../Resource/minMap/chapter 2/season 4/Chapter 2 Season 4 Minimap (Blank).png",
+                            "../Resource/minMap/chapter 2/season 5/Chapter 2 Season 5 Minimap (Blank).png",
+                            "../Resource/minMap/chapter 2/season 6/Chapter 2 Season 6 Minimap (Blank).png",
+                            "../Resource/minMap/chapter 2/season 7/Chapter 2 Season 7 Minimap (Blank).png",
+                            "../Resource/minMap/chapter 2/season 8/Chapter 2 Season 8 Minimap (Blank).png"
+                        ]
+                        var chapter1 = document.getElementById('chapter2');
+                        var imgs = document.querySelectorAll("#chapter2 img");
+                        var length = path.length;
+                        for (var i = 0; i < length; i++) {
+                            imgs[i].src = path[i];
+                            imgs[i] = new Image();
+                        }
+                    </script>
+                    <div id="chapter3" class="gallery">
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                    </div>
+                    <script>
+                        //批量添加图片
+                        var path = [
+                            "../Resource/minMap/chapter 3/season 1/Chapter 3 Season 1 Minimap (Blank).png",
+                            "../Resource/minMap/chapter 3/season 2/S20 Minimap.png",
+                            "../Resource/minMap/chapter 3/season 3/Apollo_Terrain_Minimap_21.png",
+                            "../Resource/minMap/chapter 3/season 4/Minimap_S22.PNG",
+                        ]
+                        var chapter1 = document.getElementById('chapter3');
+                        var imgs = document.querySelectorAll("#chapter3 img");
+                        var length = path.length;
+                        for (var i = 0; i < length; i++) {
+                            imgs[i].src = path[i];
+                            imgs[i] = new Image();
+                        }
+                    </script>
+                    <div id="chapter4" class="gallery" style="display: flex">
+                        <div><img onclick="showImage(this)"></div>
+                        <div><img onclick="showImage(this)" /></div>
+                        <div><img onclick="showImage(this)" /></div>
+                    </div>
+                    <script>
+                        //批量添加图片
+                        var path = [
+                            "../Resource/minMap/chapter 4/season 1/23BR_Minimap.jpg",
+                            "../Resource/minMap/chapter 4/season 2/24BR_Social_Minimap_NoNames.jpg",
+                            "../Resource/minMap/chapter 4/season 3/Minimap_6.9_Final.png"
+                        ]
+                        var chapter1 = document.getElementById('chapter4');
+                        var imgs = document.querySelectorAll("#chapter4 img");
+                        var length = path.length;
+                        for (var i = 0; i < length; i++) {
+                            imgs[i].src = path[i];
+                            imgs[i] = new Image();
+                        }
+                    </script>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="roles">
-        <div>roles</div>
-    </div>
+        <div id="roles">
+            <div>roles</div>
+        </div>
 
-    <div id="weapon">
-        <div>weapon</div>
-    </div>
+        <div id="weapon">
+            <div>weapon</div>
+        </div>
 
-    <div id="CG">
-        <div>CG</div>
-    </div>
+        <div id="CG">
+            <div>CG</div>
+        </div>
 
-    <div id="chinesize">
-        <div>chinesize</div>
-    </div>
+        <div id="chinesize">
+            <div>chinesize</div>
+        </div>
     </div>
 
 </body>
@@ -244,7 +346,7 @@
         }
     }
 
-
+    /* 自动关闭侧边栏 */
     var lastScrollTop = 0;
     window.addEventListener('scroll', function () {
         var height = document.getElementById('sidebar').offsetHeight;//侧边栏高度，不包括外边距
@@ -266,13 +368,117 @@
     })
     */
 
-    var on = 1;
-    function Menu() {
-        if (on == 1)
-            document.getElementById('menu').style.display = "block";
+    var flag = [0, 0, 0, 0];
+    var currentChapter = 4;
+    function switchChapter(element, chapter) {
+        document.querySelector("span.chapter").innerHTML = element.innerHTML;//更新章节选项
+        document.getElementById("chapter" + currentChapter).style.display = "none";//取消显示之前章节的地图
+        document.getElementById('chapter' + chapter).style.display = "flex";//显示所选章节的地图
+        currentChapter = chapter;
+        if (flag[chapter - 1] == 0) {
+            confirm("由于地图体积较大，第一次加载可能需要几秒时间，请耐心等待。\n");
+            flag[chapter - 1] = 1;
+        }
+    }
+
+    var esc = null;
+    var wheel = null;
+    function showImage(img) {
+        /* 创建容器 */
+        var imageContainer = document.createElement("div");
+        imageContainer.innerHTML = "";
+        imageContainer.id = "imageContainer";
+        document.body.appendChild(imageContainer);
+        /* 创建图片 */
+        var imageElement = document.createElement("img");
+        imageElement.src = img.src;
+        imageContainer.appendChild(imageElement);
+        zoomOut();
+        zoomOut();
+        /* 提示快捷键 */
+        shortcut = document.createElement('div');
+        shortcut.innerHTML = "Esc 退出<br/>Alt+鼠标滚轮 放大/缩小";
+        shortcut.className = "shortcut";
+        imageContainer.appendChild(shortcut);
+        /* 创建扩大的控件 */
+        var expand = document.createElement("i");
+        expand.className = "fa-solid fa-expand";
+        expand.classList.add("expand");
+        expand.onclick = zoomIn;
+        imageContainer.appendChild(expand);
+        /* 创建缩小的控件 */
+        var minimize = document.createElement("i");
+        minimize.className = "fa-solid fa-minimize";
+        minimize.classList.add("minimize");
+        minimize.onclick = zoomOut;
+        imageContainer.append(minimize);
+        /* 创建退出的控件 */
+        var exit = document.createElement('i');
+        exit.className = "fa-solid fa-xmark";
+        exit.classList.add('exit');
+        exit.onclick = exitImage;
+        imageContainer.appendChild(exit);
+        /* 进入图片浏览模式 */
+        //按下ESC键退出图片的浏览
+        esc = document.addEventListener('keydown', function (event) {
+            if (event.keyCode === 27) {
+                exitImage();
+            }
+        });
+        wheel = document.addEventListener("wheel", handleScroll);
+    }
+
+    function handleScroll(event) {
+        let scrollDirection;
+        // 检测滚轮的方向
+        if (event.deltaY > 0) {
+            scrollDirection = "down";
+        } else {
+            scrollDirection = "up";
+        }
+        if (event.altKey) {
+            if (scrollDirection == "up") {
+                zoomIn(); // 放大图片
+            } else {
+                zoomOut(); // 缩小图片
+            }
+        }
+    }
+
+    function exitImage() {
+        /* 移除组件 */
+        var imageContainer = document.getElementById('imageContainer');
+        while (imageContainer.firstChild) {
+            imageContainer.firstChild.remove();
+        }
+        imageContainer.remove();
+
+        /* 移除相应监听 */
+        alert("remove EventListener");
+        document.removeEventListener('wheel', null);//移除
+    }
+
+    var scale = 1;
+    function zoomIn() {
+        var imageElement = document.querySelector("#imageContainer img");
+        var imageContainer = document.getElementById('imageContainer');
+        scale += 0.1;
+        if (scale < 1) {
+            imageContainer.style.transform = `scale(1})`;
+            scale = 1;
+        }
         else
-            document.getElementById('menu').style.display = "none";
-        on = -on;
+            imageContainer.style.transform = `scale(${scale})`;
+        imageElement.style.transform = `scale(${scale})`;
+    }
+
+    function zoomOut() {
+        var imageElement = document.querySelector("#imageContainer img");
+        var imageContainer = document.getElementById('imageContainer');
+        scale -= 0.1;
+        imageElement.style.transform = `scale(${scale})`;
+        if (scale > 1)
+            imageContainer.style.transform = `scale(${scale})`;
     }
 </script>
 
