@@ -12,7 +12,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 1vw;
     font-weight: bold;
-    color: rgba(60, 60, 60, 0.9);
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .chapter {
@@ -47,7 +47,7 @@
     margin: 0;
     padding: 0;
     border: 1px solid rgba(60, 60, 60, 0.3);
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
 }
 
@@ -60,7 +60,8 @@
 
 .time ul li:hover {
     cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5);
+    color: rgba(0, 160, 150, 1);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .map-image {
