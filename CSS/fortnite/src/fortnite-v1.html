@@ -144,7 +144,7 @@
                     <video src="../Resource/CG/第四夜第三赛季官方正式宣传片.mp4" poster="../Resource/img/picture8.jpeg"
                         onclick="jump(-1)"></video>
                     <i class="iconfont icon-bofang"
-                        style="position: absolute; top: 45%; left: 30%; font-size: 1.5vw; color:white"></i>
+                        style="position: absolute; top: 45%; left: 31%; font-size: 1.5vw; color:white"></i>
                     <img src="../Resource/img/picture1.jpg" onclick="jump(-2)">
                     <img src="../Resource/img/picture2.jpg" onclick="jump(-3)">
                     <img src="../Resource/img/picture3.jpg" onclick="jump(-4)">
@@ -171,7 +171,7 @@
                 </div>
             </div>
             <div class="download">
-                <p>堡垒之夜可以在Epic客户端进行安装,安装包大小约30GB左右，安装游戏前请仔细检查电脑配置是否合格：</p>
+                <p>堡垒之夜可以在Epic客户端进行安装,安装包大小约31GB左右，安装游戏前请仔细检查电脑配置是否合格：</p>
                 <div class="config">
                     <span
                         onclick="document.getElementById('config').setAttribute('src','../Resource/img/最低配置.png'); switchOption(this); ">
@@ -380,87 +380,170 @@
                     <input type="checkbox" />
                     <label></label>
                 </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
+                <div>
+                    <input type="checkbox" />
+                    <label></label>
+                </div>
             </div>
-            <script>
-                var options = [
-                    "Chapter 2 Season 1",
-                    "Chapter 2 Season 2",
-                    "Chapter 2 Season 3",
-                    "Chapter 2 Season 4",
-                    "Chapter 2 Season 5",
-                    "Chapter 2 Season 6",
-                    "Chapter 2 Season 7",
-                    "Chapter 2 Season 8",
-                    "Chapter 3 Season 1",
-                    "Chapter 3 Season 2",
-                    "Chapter 3 Season 3",
-                    "Chapter 3 Season 4",
-                    "Chapter 4 Season 1",
-                    "Chapter 4 Season 2",
-                    "Chapter 4 Season 3",
-                    "Fortnite Crew",
-                    "Other",
-                    "全选",
-                    "清空",
-                ];
-                var input = document.querySelectorAll('div.filter input');
-                var label = document.querySelectorAll('div.filter label');
-                var length = input.length;
-                var i;
-                for (i = 0; i < length; i++) {
-                    input[i].setAttribute('id', "filter" + i);
-                    if (i < length - 2) {
-                        input[i].checked = true;
-                        input[i].onchange = function () { filter(this); };
-                    }
-                    else {
-                        input.checked = false;
-                        input[i].onchange = function () { wholeFilter(this) };
-                    }
-                    label[i].innerHTML = options[i];
-                    label[i].setAttribute('for', "filter" + i);
-                }
-                /* 全选或清空 */
-                function wholeFilter(input) {
-                    var len = options.length - 2;
-                    /* 全选 */
-                    if (input.id.match("filter17") && input.checked) {
-                        document.getElementById("filter18").checked = false;
-                        for (var i = 0; i < len; i++) {
-                            var input = document.getElementById("filter" + i);
-                            if (!input.checked) {
-                                input.checked = true;
-                                filter(input);
-                            }
-                        }
-                    }
-                    /* 清空 */
-                    else if (input.id.match("filter18") && input.checked) {
-                        document.getElementById("filter17").checked = false;
-                        for (var i = 0; i < len; i++) {
-                            var input = document.getElementById("filter" + i);
-                            if (input.checked) {
-                                input.checked = false;
-                                filter(input);
-                            }
-                        }
-                    }
-                }
-
-                /* 单独筛选 */
-                function filter(input) {
-                    var id = input.id;
-                    var element = "roles" + id.split('filter')[1];
-                    var value = input.checked ? "flex" : "none";
-                    if (input.checked)
-                        document.getElementById("filter18").checked = false;
-                    else
-                        document.getElementById("filter17").checked = false;
-                    document.getElementsByClassName(element)[0].style.display = value;
-                }
-            </script>
             <div class="roles_Container">
                 <div class="roles0">
+                    <a><img title="Aerial Assault Trooper" /></a>
+                    <a><img title="Renegade Raider" /></a>
+                </div>
+
+                <div class="roles1">
+                    <a><img title="Black Knight" /></a>
+                    <a><img title="Blue Squire Skin" /></a>
+                    <a><img title="Blue Squire" /></a>
+                    <a><img title="Royale Knight" /></a>
+                    <a><img title="Sparkle Specialist" /></a>
+                </div>
+
+                <div class="roles2">
+                    <a><img title="Dark Vanguard" /></a>
+                    <a><img title="Dark Voyager" /></a>
+                    <a><img title="Elite Agent" /></a>
+                    <a><img title="Mission Specialist" /></a>
+                    <a><img title="Moonwalker" /></a>
+                    <a><img title="Rust Lord" /></a>
+                    <a><img title="The Reaper" /></a>
+                </div>
+
+                <div class="roles3">
+                    <a><img title="Battlehawk" /></a>
+                    <a><img title="Carbide" /></a>
+                    <a><img title="Squad Leader" /></a>
+                    <a><img title="Teknique" /></a>
+                    <a><img title="Valor" /></a>
+                    <a><img title="Zoey" /></a>
+                </div>
+
+                <div class="roles4">
+                    <a><img title="Drift" /></a>
+                    <a><img title="Enforcer" /></a>
+                    <a><img title="Huntress" /></a>
+                    <a><img title="Ragnarok" /></a>
+                    <a><img title="Redline" /></a>
+                    <a><img title="Rook" /></a>
+                    <a><img title="Sledgehammer" /></a>
+                    <a><img title="Sun Strider" /></a>
+                </div>
+
+                <div class="roles5">
+                    <a><img title="Calamity" /></a>
+                    <a><img title="Dire" /></a>
+                    <a><img title="DJ Yonder" /></a>
+                    <a><img title="Dusk" /></a>
+                    <a><img title="Fable" /></a>
+                    <a><img title="Giddy-Up" /></a>
+                    <a><img title="Nightshade" /></a>
+                </div>
+
+                <div class="roles6">
+                    <a><img title="Lynx" /></a>
+                    <a><img title="The Ice King" /></a>
+                    <a><img title="Trog" /></a>
+                </div>
+
+                <div class="roles7">
+                    <a><img title="Blackheart" /></a>
+                    <a><img title="Ember" /></a>
+                    <a><img title="Hybrid" /></a>
+                    <a><img title="Luxe" /></a>
+                    <a><img title="Master Key" /></a>
+                    <a><img title="Peely" /></a>
+                    <a><img title="Sidewinder" /></a>
+                </div>
+
+                <div class="roles8">
+                    <a><img title="Bunker Jonesy" /></a>
+                    <a><img title="Demi" /></a>
+                    <a><img title="Rox" /></a>
+                    <a><img title="Sentinel" /></a>
+                    <a><img title="Stratus" /></a>
+                    <a><img title="Vega" /></a>
+                    <a><img title="Vendetta" /></a>
+                </div>
+
+                <div class="roles9">
+                    <a><img title="Catalyst Skin" /></a>
+                    <a><img title="Catalyst" /></a>
+                    <a><img title="Eternal Voyager Skin" /></a>
+                    <a><img title="Eternal Voyager" /></a>
+                    <a><img title="Sparkle Supreme" /></a>
+                    <a><img title="Tilted Teknique Skin" /></a>
+                    <a><img title="Tilted Teknique" /></a>
+                    <a><img title="Ultima Knight Skin" /></a>
+                    <a><img title="Ultima Knight" /></a>
+                    <a><img title="X-Lord" /></a>
+                    <a><img title="Yond3r" /></a>
+                </div>
+
+                <div class="roles10">
                     <a><img title="8-Ball" /></a>
                     <a><img title="Cameo" /></a>
                     <a><img title="Chic" /></a>
@@ -484,40 +567,8 @@
                     <a><img title="Toxin" /></a>
                     <a><img title="Turk" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 1/8-Ball.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Cameo.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Chic.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Female Recruit 1.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Female Recruit 2.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Female Recruit 3.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Female Recruit 4.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Fusion Variant.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Fusion.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Hazard.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Journey.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Male Recruit 1.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Male Recruit 2.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Male Recruit 3.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Male Recruit 4.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Remedy.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Rippley.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Riptide.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Scratch.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Sludge.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Toxin.png",
-                        "../Resource/outfit/Chapter 2 Season 1/Turk.png"
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles0 a");
-                    var roles = document.querySelectorAll('.roles0 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles1">
+
+                <div class="roles11">
                     <a><img title="Agent Peely (Ghost)" /></a>
                     <a><img title="Agent Peely (Shadow)" /></a>
                     <a><img title="Agent Peely" /></a>
@@ -539,38 +590,8 @@
                     <a><img title="TNTina (Shadow)" /></a>
                     <a><img title="TNTina" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 2/Agent Peely (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Agent Peely (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Agent Peely.png",
-                        "../Resource/outfit/Chapter 2 Season 2/Henchman (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Henchman (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Henchman (with glasses).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Henchman.png",
-                        "../Resource/outfit/Chapter 2 Season 2/Maya.png",
-                        "../Resource/outfit/Chapter 2 Season 2/Meowscles (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Meowscles (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Meowscles.png",
-                        "../Resource/outfit/Chapter 2 Season 2/Midas (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Midas (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Midas.png",
-                        "../Resource/outfit/Chapter 2 Season 2/Skye (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Skye (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/Skye.png",
-                        "../Resource/outfit/Chapter 2 Season 2/TNTina (Ghost).png",
-                        "../Resource/outfit/Chapter 2 Season 2/TNTina (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 2/TNTina.png"
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles1 a");
-                    var roles = document.querySelectorAll('.roles1 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles2">
+
+                <div class="roles12">
                     <a><img title="Action Kit" /></a>
                     <a><img title="Advanced Scuba Jonesy" /></a>
                     <a><img title="Aquaman" /></a>
@@ -600,46 +621,8 @@
                     <a><img title="Voyager Fade" /></a>
                     <a><img title="Welder Jules" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 3/Action Kit.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Advanced Scuba Jonesy.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Aquaman.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Arthur Curry.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Black Eternal Knight.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Blue Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Blue Voyage Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Cove Rider Ocean.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Eternal Knight.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Fade.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Gold Eternal Knight.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Happy Kit.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Jules.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Kit.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Masked Fade.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Masked Scuba Jonesy.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Nova Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Ocean.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Riptide Ocean.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Sacred Eternal Knight.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Scuba Jonesy.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Shadow Jules.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Spacewalk Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Supernova Siona.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Tactical Scuba Jonesy.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Voyager Fade.png",
-                        "../Resource/outfit/Chapter 2 Season 3/Welder Jules.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles2 a");
-                    var roles = document.querySelectorAll('.roles2 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles3">
+
+                <div class="roles13">
                     <a><img title="Crimson Jennifer Walters" /></a>
                     <a><img title="Doctor Doom" /></a>
                     <a><img title="God Emperor Doom" /></a>
@@ -659,36 +642,8 @@
                     <a><img title="Wolverine Classic" /></a>
                     <a><img title="Wolverine" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 4/Crimson Jennifer Walters.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Doctor Doom.png",
-                        "../Resource/outfit/Chapter 2 Season 4/God Emperor Doom.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Green She-Hulk.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Groot + Rocket.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Groot.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Iron Man.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Jennifer Walters.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Mystique.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Punk Storm.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Red She-Hulk.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Storm Thor.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Storm.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Tactical Mystique.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Thor.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Tony Stark.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Wolverine Classic.png",
-                        "../Resource/outfit/Chapter 2 Season 4/Wolverine.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles3 a");
-                    var roles = document.querySelectorAll('.roles3 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles4">
+
+                <div class="roles14">
                     <a><img title="Beskar Armor Mandalorian" /></a>
                     <a><img title="Challenger Menace No Plume" /></a>
                     <a><img title="Challenger Menace" /></a>
@@ -719,53 +674,13 @@
                     <a><img title="Warstrike Lexa" /></a>
                     <a><img title="Wrath Kondor" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 5/Beskar Armor Mandalorian.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Challenger Menace No Plume.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Challenger Menace.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Dark Deeds Mancake.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Galactic Ranger Reese.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Infiltrator Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Kondor.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Lonesome Hero Mancake.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mancake.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mandalorian Variant.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mandalorian.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mave.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mechafusion Infiltrator Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mechafusion Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Mechafusion Warstrike Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Menace Mask On.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Menace.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Nebula Racer Reese.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Reese.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Shieldbreaker Mave.png",
-                        "../Resource/outfit/Chapter 2 Season 5/The Cake With No Name.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Undefeated Menace No Plume.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Undefeated Menace.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Unshackled Kondor.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Unshackled Wrath Kondor.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Unstoppable Mave.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Warstrike Lexa.png",
-                        "../Resource/outfit/Chapter 2 Season 5/Wrath Kondor.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles4 a");
-                    var roles = document.querySelectorAll('.roles4 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles5">
+
+                <div class="roles15">
                     <a><img title="Agent Jones (Variant 1)" /></a>
                     <a><img title="Agent Jones (Variant 2)" /></a>
                     <a><img title="Agent Jones (Variant 3)" /></a>
                     <a><img title="Agent Jones (Variant 4)" /></a>
                     <a><img title="Agent Jones (Variant 5)" /></a>
-                    <a><img title="Agent Jones Backpack" /></a>
                     <a><img title="Agent Jones" /></a>
                     <a><img title="Cluck (Eggsplosive Variant)" /></a>
                     <a><img title="Cluck" /></a>
@@ -785,42 +700,8 @@
                     <a><img title="Tarana X-Tinction Armor" /></a>
                     <a><img title="Tarana" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones (Variant 1).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones (Variant 2).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones (Variant 3).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones (Variant 4).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones (Variant 5).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones Backpack",
-                        "../Resource/outfit/Chapter 2 Season 6/Agent Jones.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Cluck (Eggsplosive Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Cluck.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Lara Croft (25th Anniversary Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Lara Croft (Classic Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Lara Croft (Gold Anniversary Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Lara Croft.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Raven (Classic Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Raven (Rachel Roth Variant).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Raz Glyph Acolyte.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Raz Glyph Master.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Rebirth Raven.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Spire Assassin (unmasked).png",
-                        "../Resource/outfit/Chapter 2 Season 6/Spire Assassin.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Tarana Indigo.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Tarana Indigoing X-Tinct.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Tarana X-Tinction Armor.png",
-                        "../Resource/outfit/Chapter 2 Season 6/Tarana.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles5 a");
-                    var roles = document.querySelectorAll('.roles5 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles6">
+
+                <div class="roles16">
                     <a><img title="Battlestripe Slone" /></a>
                     <a><img title="Battlesuit Slone (Glasses)" /></a>
                     <a><img title="Battlesuit Slone" /></a>
@@ -846,43 +727,8 @@
                     <a><img title="Voyager Sunny" /></a>
                     <a><img title="Zyg & Choppy" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 2 Season 7/Battlestripe Slone.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Battlesuit Slone (Glasses).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Battlesuit Slone.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Clark Kent.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Doctor Slone (No Glasses).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Doctor Slone (Ponytail).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Doctor Slone.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Guggimon (Masked).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Guggimon.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Joey (Alien).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Joey (Human).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Kymera.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Mechaglow Zyg & Choppy.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Molten Midnight Zyg & Choppy.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Rick Sanchez.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Sandstone Joey (Alien).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Sandstone Joey (Human).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Sunny.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Superman (Shadow) Pose.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Superman (Shadow).png",
-                        "../Resource/outfit/Chapter 2 Season 7/Superman.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Toxic Rick.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Voyager Sunny.png",
-                        "../Resource/outfit/Chapter 2 Season 7/Zyg & Choppy.png",
 
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles6 a");
-                    var roles = document.querySelectorAll('.roles6 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles7">
+                <div class="roles17">
                     <a><img title="Bold Charlotte" /></a>
                     <a><img title="Charlotte Hagiri" /></a>
                     <a><img title="Charlotte" /></a>
@@ -907,43 +753,9 @@
                     <a><img title="Toona Fish (Love Ranger)" /></a>
                     <a><img title="Toona Fish" /></a>
                     <a><img title="Torin" /></a>
-                    <script>
-                        var paths = [
-                            "../Resource/outfit/Chapter 2 Season 8/Bold Charlotte.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Charlotte Hagiri.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Charlotte.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Fabio Sparklemane.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Flame-Roasted Fabio.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Golden Crunch Fabio.png",
-                            "../Resource/outfit/Chapter 2 Season 8/J.B. Chimpanski (Helmet ON).png",
-                            "../Resource/outfit/Chapter 2 Season 8/J.B. Chimpanski.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor Arctic Operative (Trenchcoat).png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor Arctic Operative.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor Tactical Gray (Trenchcoat).png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor Tactical Gray.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor Trenchcoat.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Kor.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Lunar Surface J.B..png",
-                            "../Resource/outfit/Chapter 2 Season 8/Nebula Rose J.B..png",
-                            "../Resource/outfit/Chapter 2 Season 8/Sideways Stalker.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Sideways Warrior (Variant).png",
-                            "../Resource/outfit/Chapter 2 Season 8/Sideways Warrior.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Spirit Charlotte.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Toona Fish (Jonesy).png",
-                            "../Resource/outfit/Chapter 2 Season 8/Toona Fish (Love Ranger).png",
-                            "../Resource/outfit/Chapter 2 Season 8/Toona Fish.png",
-                            "../Resource/outfit/Chapter 2 Season 8/Torin.png",
-                        ];
-                        var length = paths.length;
-                        var links = document.querySelectorAll(".roles7 a");
-                        var roles = document.querySelectorAll('.roles7 img');
-                        for (var i = 0; i < length; i++) {
-                            links[i].setAttribute('href', paths[i]);
-                            roles[i].setAttribute('src', paths[i]);
-                        }
-                    </script>
                 </div>
-                <div class="roles8">
+
+                <div class="roles18">
                     <a><img title="Bitter Gumbo" /></a>
                     <a><img title="Future Foundation Suit" /></a>
                     <a><img title="Gumbo" /></a>
@@ -981,53 +793,8 @@
                     <a><img title="The Foundation" /></a>
 
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 3 Season 1/Bitter Gumbo.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Future Foundation Suit.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Gumbo.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe (Blue Helmet).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe (Future Frost).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe (Jacket).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe (Sleeveless).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe Helmet.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Harlowe.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Haven (Cat Mask).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Haven (Dark).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Haven (Hat).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Haven (Horned Mask).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Haven.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Lt. John Llama (Classic).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Lt. John Llama (Special Forces).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Lt. John Llama.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin (Cape Helmet).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin (Cape).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin (Vest).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin Azure.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin Crimson Helmet.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin Crimson.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin Emerald (Cape Helmet).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin Emerald.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Ronin.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Shanta (Armor + No Mask).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Shanta (Armor).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Shanta.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Sour Gumbo.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Spider-Man (Alt).png",
-                        "../Resource/outfit/Chapter 3 Season 1/Spider-Man.png",
-                        "../Resource/outfit/Chapter 3 Season 1/Symbiote Suit.png",
-                        "../Resource/outfit/Chapter 3 Season 1/The Foundation (Combat).png",
-                        "../Resource/outfit/Chapter 3 Season 1/The Foundation.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles8 a");
-                    var roles = document.querySelectorAll('.roles8 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles9">
+
+                <div class="roles19">
                     <a><img title="Dazzling Spirit" /></a>
                     <a><img title="Doctor Strange" /></a>
                     <a><img title="Erisa (Blue Cape)" /></a>
@@ -1067,56 +834,8 @@
                     <a><img title="The Origin" /></a>
                     <a><img title="Tsuki 2" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 3 Season 2/Dazzling Spirit.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Doctor Strange.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Blue Cape).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Blue Helmet).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Blue).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Cape).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Green Cape).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Green).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa (Helmet).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Erisa.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Gunnar (Green).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Gunnar (Helmet On).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Gunnar (Orange).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Gunnar (White).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Gunnar.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Iridium.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Battle Gold).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Battle Gold, Glasses Off).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Combat Rebel Glasses On).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Combat Rebel).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Glasses Off).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Gold Jacket).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O. (Pastel Jacket).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Kiara K.O..png",
-                        "../Resource/outfit/Chapter 3 Season 2/Prowler (Cape Off).png",
-                        "../Resource/outfit/Chapter 3 Season 2/Prowler.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Shimmering Pearl.png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Imagined (Combat Elite Storm).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Imagined (Combat Elite).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Imagined (Storm).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Imagined (Viridian).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Imagined.png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Origin (Combat Elite).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Origin (Granite Grey) .png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Origin (On Point).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Origin (Spacevoid Black).png",
-                        "../Resource/outfit/Chapter 3 Season 2/The Origin.png",
-                        "../Resource/outfit/Chapter 3 Season 2/Tsuki 2.0.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles9 a");
-                    var roles = document.querySelectorAll('.roles9 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles10">
+
+                <div class="roles20">
                     <a><img title="Adira (Battle Mask)" /></a>
                     <a><img title="Adira (Elite)" /></a>
                     <a><img title="Adira (Infiltrator)" /></a>
@@ -1141,41 +860,8 @@
                     <a><img title="Syndicate Couture" /></a>
                     <a><img title="Tover" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 3 Season 3/Adira (Battle Mask).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Adira (Elite).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Adira (Infiltrator).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Adira.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Bad Luck.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Blackout.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Darth Vader.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Evie.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Indiana Jones.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Malik (Exalted).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Malik (Midnight Sentinel).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Malik.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Neon Couture.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Ninth Life.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Sabina (Burning Ember).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Sabina (Ponytail).png",
-                        "../Resource/outfit/Chapter 3 Season 3/Sabina.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Snap.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Storm Brawler.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Stormfarer.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Summer Strider.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Syndicate Couture.png",
-                        "../Resource/outfit/Chapter 3 Season 3/Tover.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles10 a");
-                    var roles = document.querySelectorAll('.roles10 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles11">
+
+                <div class="roles21">
                     <a><img title="Bytes" /></a>
                     <a><img title="Bytes_LoneTraveler" /></a>
                     <a><img title="Bytes_PonyTails" /></a>
@@ -1206,47 +892,8 @@
                     <a><img title="Twyn_XenonEspionage" /></a>
                     <a><img title="WildBearyGrizz" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 3 Season 4/Bytes.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Bytes_LoneTraveler.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Bytes_PonyTails.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Bytes_Wanderer.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Grizz.png",
-                        "../Resource/outfit/Chapter 3 Season 4/LennoxRose.png",
-                        "../Resource/outfit/Chapter 3 Season 4/LennoxRose_BubblegumPunk.png",
-                        "../Resource/outfit/Chapter 3 Season 4/LennoxRose_FreshVandal.png",
-                        "../Resource/outfit/Chapter 3 Season 4/MeowSkulls.png",
-                        "../Resource/outfit/Chapter 3 Season 4/MeowSkulls_CloudNine.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_(Reality-659).png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_AuroraBattlesuit.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_MoonbaseBattlesuit.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_MoonbaseBattlesuit_8UP.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_MoonbaseBattlesuit_B.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_MoonbaseBattlesuit_C.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_MoonbaseBattlesuit_D.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_NanofiberSuit.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_OceanicCamoflage.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Paradigm_SparringSuit.png",
-                        "../Resource/outfit/Chapter 3 Season 4/SpiderGwen.png",
-                        "../Resource/outfit/Chapter 3 Season 4/SpiderGwen_NoMask.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Stryder.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Stryder_Pastel.png",
-                        "../Resource/outfit/Chapter 3 Season 4/SypherPK.png",
-                        "../Resource/outfit/Chapter 3 Season 4/TheHerald.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Twyn.png",
-                        "../Resource/outfit/Chapter 3 Season 4/Twyn_XenonEspionage.png",
-                        "../Resource/outfit/Chapter 3 Season 4/WildBearyGrizz.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles11 a");
-                    var roles = document.querySelectorAll('.roles11 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles12">
+
+                <div class="roles22">
                     <a><img title="23BR_BP_Outfit_Ascension_Nezumi" /></a>
                     <a><img title="23BR_BP_Outfit_Doom_Slayer" /></a>
                     <a><img title="23BR_BP_Outfit_Doom_Slayer_Astro_Armor" /></a>
@@ -1272,42 +919,8 @@
                     <a><img title="23BR_BP_Outfit_The_Ageless_Armor" /></a>
                     <a><img title="23BR_BP_Outfit_The_Ageless_Helmet" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Ascension_Nezumi.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Doom_Slayer.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Doom_Slayer_Astro_Armor.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Doom_Slayer_Ember_Armor.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Doom_Slayer_Phobos_Armor.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Dusty.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Dusty_Away_Game_Dusty.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Dusty_Boneyard_Dusty.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Dusty_Bullpen_Brawler_Dusty.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Exile_Nezumi.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Helsie.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Helsie_Bobarista_Helsie.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Helsie_Club_President_Helsie.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Massai.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Massai_Air_Walker_Massai.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Massai_Glasses_Off.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Massai_Thrasher_Massai.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Moonglow Selene_Moonglow_Selene.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Nezumi.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Selene.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_Selene_Sunlit_Selene.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_The_Ageless.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_The_Ageless_Armor.png",
-                        "../Resource/outfit/Chapter 4 Season 1/23BR_BP_Outfit_The_Ageless_Helmet.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles12 a");
-                    var roles = document.querySelectorAll('.roles12 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles13">
+
+                <div class="roles23">
                     <a><img title="24BR_BP_Outfit_Erin_Jaeger" /></a>
                     <a><img title="24BR_BP_Outfit_Erin_Jaeger_Scout_Regiment_Cloak" /></a>
                     <a><img title="24BR_BP_Outfit_Highwire" /></a>
@@ -1342,51 +955,8 @@
                     <a><img title="24BR_BP_Outfit_Thunder_Midnight_Snack_Thunder" /></a>
                     <a><img title="24BR_BP_Outfit_Thunder_Rumbling_Thunder" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Erin_Jaeger.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Erin_Jaeger_Scout_Regiment_Cloak.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Highwire.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Highwire_Bubblegum_Highwire.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Highwire_Bubblegum_Highwire_HoodDown.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Highwire_HoodDown.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Highwire_Wolfwalker_Highwire.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Imani.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Imani_Future-fi_Imani.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Imani_GlassesOff.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Imani_Headliner_Imani.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Imani_NoFX.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki_Magmatic_Mizuki.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki_Magmatic_Mizuki_Skirt.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki_River_Empress_Mizuki_MaskOff.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki_River_Empress_Mizuki_MaskOn.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mizuki_Skirt_MaskOn.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mystica.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mystica_Crimsonbloom_Mystica.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Mystica_Wintersong_Mystica.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Renzo_the_Destroyer.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Renzo_the_Destroyer_NonReactive.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Renzo_the_Destroyer_Renzo_the_Magnificent.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Renzo_the_Destroyer_Rococo_Cloak-o.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Stray.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Stray_HoodDown.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Stray_NoFX.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Stray_Renegade_Stray.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Stray_Stealth_Stray.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Thunder.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Thunder_Midnight_Snack_Thunder.png",
-                        "../Resource/outfit/Chapter 4 Season 2/24BR_BP_Outfit_Thunder_Rumbling_Thunder.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles13 a");
-                    var roles = document.querySelectorAll('.roles13 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles14">
+
+                <div class="roles24">
                     <a><img title="25BR_BP_Outfit_Era" /></a>
                     <a><img title="25BR_BP_Outfit_Era_Hat_On" /></a>
                     <a><img title="25BR_BP_Outfit_Era_Iconic_Era" /></a>
@@ -1429,61 +999,10 @@
                     <a><img title="25BR_Outfit_Kimiko_Five-Tails" /></a>
                     <a><img title="25BR_Outfit_Kimiko_Five-Tails_Reactive" /></a>
                     <a><img title="25BR_Outfit_Safari_Stealth" /></a>
+                    <a><img title="wp12455246-optimus-prime-fortnite-wallpapers" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era_Hat_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era_Iconic_Era.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era_Timeless_Era.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era_Timeless_EraNo_Cape.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Era_Timeless_Era_Hat_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo_Lorenzo_the_Dashing.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo_Lorenzo_the_DashingMask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo_Lorenzo_the_Reckless.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo_Lorenzo_the_Reckless_Mask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Lorenzo_Mask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Mariposa.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Mariposa_Dynamo_Mariposa.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Mariposa_Dynamo_Mariposa_Mask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Mariposa_Mask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Mariposa_Midnight_Mariposa.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Purradise_Meowscles.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Purradise_Meowscles_Clawesome_Meowscles.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Purradise_Meowscles_Furmidable_Meowscles.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik_Deepwalker_Relik.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik_Deepwalker_RelikMask_OnSkirt_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik_Mask_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik_Skirt_On.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Relik_Wildguard_Relik.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Rian.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Rian_Rockslide_Rian.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Rian_Rockslide_Rian_Vest_Off.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Rian_Stonewash_Rian.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Rian_Vest_Off.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace_Hood_Up.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace_Luminary_Trace.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace_Reactivity_Off.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace_Rebel_Trace.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_BP_Outfit_Trace_Rebel_TraceHood_Up.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_Outfit_Designer_Tsuki.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_Outfit_Innovator_Slone.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_Outfit_Kimiko_Five-Tails.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_Outfit_Kimiko_Five-Tails_Reactive.png",
-                        "../Resource/outfit/Chapter 4 Season 3/25BR_Outfit_Safari_Stealth.png",
-                    ]
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles14 a");
-                    var roles = document.querySelectorAll('.roles14 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles15">
+
+                <div class="roles25">
                     <a><img title="23BR_Outfit_Rift_Knight_Kieran" /></a>
                     <a><img title="24BR_Outfit_Styx" /></a>
                     <a><img title="24BR_Outfit_Styx_ReactiveOn" /></a>
@@ -1506,74 +1025,240 @@
                     <a><img title="The Burning Wolf" /></a>
                     <a><img title="Vi" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Fortnite Crew/23BR_Outfit_Rift_Knight_Kieran.png",
-                        "../Resource/outfit/Fortnite Crew/24BR_Outfit_Styx.png",
-                        "../Resource/outfit/Fortnite Crew/24BR_Outfit_Styx_ReactiveOn.png",
-                        "../Resource/outfit/Fortnite Crew/Alli.png",
-                        "../Resource/outfit/Fortnite Crew/Deimos Variant Glow.png",
-                        "../Resource/outfit/Fortnite Crew/Deimos Variant.png",
-                        "../Resource/outfit/Fortnite Crew/Deimos.png",
-                        "../Resource/outfit/Fortnite Crew/DespairM.png",
-                        "../Resource/outfit/Fortnite Crew/DespairM_NoMask.png",
-                        "../Resource/outfit/Fortnite Crew/ForsakeF.png",
-                        "../Resource/outfit/Fortnite Crew/Galaxia Variant.png",
-                        "../Resource/outfit/Fortnite Crew/Galaxia.png",
-                        "../Resource/outfit/Fortnite Crew/Llambro.png",
-                        "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master Dark.png",
-                        "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master Light.png",
-                        "../Resource/outfit/Fortnite Crew/Mecha Cuddle Master.png",
-                        "../Resource/outfit/Fortnite Crew/Mecha Strike Commander.png",
-                        "../Resource/outfit/Fortnite Crew/Summer Skye (with Hat).png",
-                        "../Resource/outfit/Fortnite Crew/Summer Skye.png",
-                        "../Resource/outfit/Fortnite Crew/The Burning Wolf.png",
-                        "../Resource/outfit/Fortnite Crew/Vi.png",
-                    ]
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles15 a");
-                    var roles = document.querySelectorAll('.roles15 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
-                <div class="roles16">
+
+                <div class="roles26">
+                    <a><img title="-erisa" /></a>
+                    <a><img title="Battle-Breakers Razor" /></a>
                     <a><img title="Captain America" /></a>
+                    <a><img title="dahlia (2)" /></a>
+                    <a><img title="dahlia" /></a>
+                    <a><img title="etheria" /></a>
+                    <a><img title="keleritas" /></a>
+                    <a><img title="marigold" /></a>
+                    <a><img title="mina-park" /></a>
+                    <a><img title="Phaedra" /></a>
                     <a><img title="Relaxed Fit Jonesy" /></a>
+                    <a><img title="slayer-charlotte" /></a>
+                    <a><img title="snowdancer (2)" /></a>
+                    <a><img title="snowdancer" /></a>
+                    <a><img title="tsuki" /></a>
                     <a><img title="Yee-haw" /></a>
                     <a><img title="Zenith" /></a>
                 </div>
-                <script>
-                    var paths = [
-                        "../Resource/outfit/Other/Captain America.png",
-                        "../Resource/outfit/Other/Relaxed Fit Jonesy.png",
-                        "../Resource/outfit/Other/Yee-haw.png",
-                        "../Resource/outfit/Other/Zenith.png",
-                    ];
-                    var length = paths.length;
-                    var links = document.querySelectorAll(".roles16 a");
-                    var roles = document.querySelectorAll('.roles16 img');
-                    for (var i = 0; i < length; i++) {
-                        links[i].setAttribute('href', paths[i]);
-                        roles[i].setAttribute('src', paths[i]);
-                    }
-                </script>
+
+                <div class="roles27">
+                    <a><img title="Candyman" /></a>
+                    <a><img title="Crusher" /></a>
+                    <a><img title="Cuddle Team Leader" /></a>
+                    <a><img title="Ex" /></a>
+                    <a><img title="Fallen Love Ranger" /></a>
+                    <a><img title="Heartbreaker" /></a>
+                    <a><img title="Love Ranger" /></a>
+                    <a><img title="Lovely Fortnite" /></a>
+                    <a><img title="Pinkie" /></a>
+                    <a><img title="Skully" /></a>
+                </div>
+
+                <div class="roles28">
+                    <a><img title="Battle Hound" /></a>
+                    <a><img title="Chance" /></a>
+                    <a><img title="Clover Team Leader" /></a>
+                    <a><img title="Highland Warrior" /></a>
+                    <a><img title="Sgt" /></a>
+                </div>
+
+                <div class="roles29">
+                    <a><img title="Babbit" /></a>
+                    <a><img title="Bun Bun" /></a>
+                    <a><img title="Bunny Brawler" /></a>
+                    <a><img title="Bunya" /></a>
+                    <a><img title="Ceecee" /></a>
+                    <a><img title="Dutch" /></a>
+                    <a><img title="Hit Man" /></a>
+                    <a><img title="Hopper" /></a>
+                    <a><img title="Hopscotch" /></a>
+                    <a><img title="Megg" /></a>
+                    <a><img title="Nitehare" /></a>
+                    <a><img title="Quackling" /></a>
+                    <a><img title="Rabbit Raider" /></a>
+                    <a><img title="Stella" /></a>
+                    <a><img title="Webster" /></a>
+                    <a><img title="Whiska" /></a>
+                </div>
+
+                <div class="roles30">
+                    <a><img title="All-Hallows Steve" /></a>
+                    <a><img title="Baba Yaga" /></a>
+                    <a><img title="Big Mouth" /></a>
+                    <a><img title="Blacklight" /></a>
+                    <a><img title="Bone Boss" /></a>
+                    <a><img title="Bone Ravage" /></a>
+                    <a><img title="Bonejamin" /></a>
+                    <a><img title="Boo-Lastoff" /></a>
+                    <a><img title="Brainiac" /></a>
+                    <a><img title="Bunnymoon" /></a>
+                    <a><img title="Burial Threat" /></a>
+                    <a><img title="Catrina" /></a>
+                    <a><img title="Chaos Agent" /></a>
+                    <a><img title="Chaos Agent" /></a>
+                    <a><img title="Chrome Punk" /></a>
+                    <a><img title="Crypt Crosser" /></a>
+                    <a><img title="Curdle Scream Leader" /></a>
+                    <a><img title="Dante" /></a>
+                    <a><img title="Dark Tricera" /></a>
+                    <a><img title="Deadeye" /></a>
+                    <a><img title="Deadfire" /></a>
+                    <a><img title="Decaying Dribbler" /></a>
+                    <a><img title="Delirium" /></a>
+                    <a><img title="Doom Dancer" /></a>
+                    <a><img title="Extinguished Firebrand" /></a>
+                    <a><img title="Fatal Finisher" /></a>
+                    <a><img title="Fishskull" /></a>
+                    <a><img title="Frankenstein's Monster" /></a>
+                    <a><img title="Ghoul Trooper" /></a>
+                    <a><img title="Grisabelle" /></a>
+                    <a><img title="Gummy Fishstick" /></a>
+                    <a><img title="Hay Man" /></a>
+                    <a><img title="Haze" /></a>
+                    <a><img title="Headlock" /></a>
+                    <a><img title="Hemlock" /></a>
+                    <a><img title="Hollowhead" /></a>
+                    <a><img title="Horrorsonic" /></a>
+                    <a><img title="Ione" /></a>
+                    <a><img title="Jack Gourdon" /></a>
+                    <a><img title="Jack O'Sassin" /></a>
+                    <a><img title="Jett" /></a>
+                    <a><img title="Jolterror" /></a>
+                    <a><img title="Kaws Skeleton" /></a>
+                    <a><img title="Midfield Montrosity" /></a>
+                    <a><img title="Party Trooper" /></a>
+                    <a><img title="Patch Patroller" /></a>
+                    <a><img title="Patch" /></a>
+                    <a><img title="Peely Bone" /></a>
+                    <a><img title="Plague" /></a>
+                    <a><img title="Punk" /></a>
+                    <a><img title="Putrid Playmaker" /></a>
+                    <a><img title="Putrid Polarity" /></a>
+                    <a><img title="Ravina" /></a>
+                    <a><img title="Rosa" /></a>
+                    <a><img title="Scourge" /></a>
+                    <a><img title="Sinister Glare" /></a>
+                    <a><img title="Sinister Striker" /></a>
+                    <a><img title="Skeletra" /></a>
+                    <a><img title="Skull Squad Leader" /></a>
+                    <a><img title="Soulless Sweeper" /></a>
+                    <a><img title="Spooky Team Leader" /></a>
+                    <a><img title="Straw Ops" /></a>
+                    <a><img title="Teef" /></a>
+                    <a><img title="The Bitey Volt" /></a>
+                    <a><img title="The Good Doctor" /></a>
+                    <a><img title="The Mummy" /></a>
+                    <a><img title="Theyre Back-Lash" /></a>
+                    <a><img title="Undying Sorrow" /></a>
+                    <a><img title="Wanderlost" /></a>
+                    <a><img title="Willow" /></a>
+                </div>
+
+                <div class="roles31">
+                    <a><img title="Arctic Adeline" /></a>
+                    <a><img title="Blinky" /></a>
+                    <a><img title="Codename" /></a>
+                    <a><img title="Cozy Commander" /></a>
+                    <a><img title="Crackabella" /></a>
+                    <a><img title="Crackshot" /></a>
+                    <a><img title="Cutiepie" /></a>
+                    <a><img title="Dolph" /></a>
+                    <a><img title="Fa-La-La-La Fishstick" /></a>
+                    <a><img title="Ginger Gunner" /></a>
+                    <a><img title="Gingerbread Raider" /></a>
+                    <a><img title="Gingerbread Raider" /></a>
+                    <a><img title="Glimmer" /></a>
+                    <a><img title="Guff Gringle" /></a>
+                    <a><img title="Holly Jammer" /></a>
+                    <a><img title="Jolly Jammer" /></a>
+                    <a><img title="Kane" /></a>
+                    <a><img title="Krampus" /></a>
+                    <a><img title="LT" /></a>
+                    <a><img title="Merry Marauder" /></a>
+                    <a><img title="Nog Ops" /></a>
+                    <a><img title="Red Nosed Raider" /></a>
+                    <a><img title="Red-nosed Ranger" /></a>
+                    <a><img title="Sled Ready Guff" /></a>
+                    <a><img title="Snowbell" /></a>
+                    <a><img title="Sugarplum" /></a>
+                    <a><img title="Tinseltoes" /></a>
+                    <a><img title="Yule Trooper" /></a>
+                    <a><img title="Yuletide Ranger" /></a>
+                </div>
+
+                <div class="roles32">
+                    <a><img title="Ant-Man" /></a>
+                    <a><img title="Black Panther" /></a>
+                    <a><img title="Black Widow Outfit" /></a>
+                    <a><img title="Black Widow" /></a>
+                    <a><img title="Blade" /></a>
+                    <a><img title="Britestar" /></a>
+                    <a><img title="Cable" /></a>
+                    <a><img title="Captain America" /></a>
+                    <a><img title="Captain America" /></a>
+                    <a><img title="Clint Barton" /></a>
+                    <a><img title="Daredevil" /></a>
+                    <a><img title="Dark Phoenix" /></a>
+                    <a><img title="Deadpool" /></a>
+                    <a><img title="Domino" /></a>
+                    <a><img title="Eddie Brock" /></a>
+                    <a><img title="Gambit" /></a>
+                    <a><img title="Gamora" /></a>
+                    <a><img title="Ghost Rider" /></a>
+                    <a><img title="Green Goblin" /></a>
+                    <a><img title="Hulk" /></a>
+                    <a><img title="Iron Man" /></a>
+                    <a><img title="Kate Bishop" /></a>
+                    <a><img title="Loki Laufeyson" /></a>
+                    <a><img title="Mary Jane" /></a>
+                    <a><img title="MJ No Way Home" /></a>
+                    <a><img title="Moon Knight" /></a>
+                    <a><img title="Nick Fury" /></a>
+                    <a><img title="Ravenpool" /></a>
+                    <a><img title="Rogue" /></a>
+                    <a><img title="Scarlet Witch" /></a>
+                    <a><img title="Shang-Chi" /></a>
+                    <a><img title="Silver Surfer" /></a>
+                    <a><img title="Spider-Man" /></a>
+                    <a><img title="Spider-Man1" /></a>
+                    <a><img title="Spider-Man2" /></a>
+                    <a><img title="Star-Lord Outfit" /></a>
+                    <a><img title="Taskmaster" /></a>
+                    <a><img title="Thanos" /></a>
+                    <a><img title="Venom" /></a>
+                    <a><img title="Wolverine Zero" /></a>
+                </div>
+
+                <div class="roles33">
+                    <a><img title="Gaara" /></a>
+                    <a><img title="Hinata Hyuga" /></a>
+                    <a><img title="Itachi Uchiha" /></a>
+                    <a><img title="Kakashi Hatake" /></a>
+                    <a><img title="Naruto Uzumaki" /></a>
+                    <a><img title="Orochimaru" /></a>
+                    <a><img title="Sakura Haruno" /></a>
+                    <a><img title="Sasuke Uchiha" /></a>
+                </div>
             </div>
+            <script src="../src/roles.js"></script>
         </div>
-    </div>
 
-    <div id="weapon">
-        <div>weapon</div>
-    </div>
+        <div id="weapon">
+            <div style="text-align: center;">weapon待开发</div>
+        </div>
 
-    <div id="CG">
-        <div>CG</div>
-    </div>
+        <div id="CG">
+            <div style="text-align: center;">CG待开发</div>
+        </div>
 
-    <div id="chinesize">
-        <div>chinesize</div>
-    </div>
+        <div id="chinesize">
+            <div style="text-align: center;">chinesize待开发</div>
+        </div>
     </div>
 
 </body>
@@ -1631,6 +1316,7 @@
     }
 </script>
 
+<!--
 <script>
     /* 自动在后台加载网页的所有图片 */
     window.addEventListener("DOMContentLoaded", function () {
@@ -1644,6 +1330,7 @@
         }
     });
 </script>
+-->
 
 
 </html>
