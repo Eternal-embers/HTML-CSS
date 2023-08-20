@@ -1147,7 +1147,7 @@ var paths = [
     "../Resource/outfit/NARUTO/Gaara.jpeg",
     "../Resource/outfit/NARUTO/Hinata Hyuga.jpeg",
     "../Resource/outfit/NARUTO/Itachi Uchiha.jpeg",
-    "../Resource/outfit/NARUTO/Kakashi Hatake.png",
+    "../Resource/outfit/NARUTO/Kakashi Hatake.jpeg",
     "../Resource/outfit/NARUTO/Naruto Uzumaki.jpeg",
     "../Resource/outfit/NARUTO/Orochimaru.jpeg",
     "../Resource/outfit/NARUTO/Sakura Haruno.jpeg",
