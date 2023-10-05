@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>html + css + js 实现贪吃蛇小游戏</title>
+    <style>
+        /* 为了方便计算，把边距相关的属性和盒模型重置 */
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            outline: 0;
+            box-sizing: border-box;
+        }
+
+        /* 舞台 */
+        .stage {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            background-color: rgb(112, 196, 112);
+            border-top: 1px solid #333333;
+            border-left: 1px solid #333333;
+        }
+
+        /* 行 */
+        .row {
+            height: 50px;
+            display: flex;
+        }
+
+        /* 列 */
+        .col {
+            height: 50px;
+            width: 50px;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 蛋 */
+        .egg {
+            width: 25px;
+            height: 28px;
+            /* 一个发光的蛋 */
+            background-color: #d5d5d5;
+
+            /* 设置边框弧度，使形状像一个蛋 */
+            border-radius: 25px;
+
+            /* 添加阴影 */
+            box-shadow: 1px 1px 6px 1px rgb(138, 138, 138);
+        }
+
+        /* 蛇 */
+        .snake {
+            width: 100%;
+            height: 100%;
+        }
+
+        .snake.head {
+            background-color: rgb(74, 161, 87);
+        }
+
+        .snake.body {
+            background-color: rgb(74, 161, 87);
+        }
+    </style>
+</head>
+
+<body>
+    <!--贪吃蛇的 html 代码-->
+    <div class="stage" id="stage">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <script>
+        /* 贪吃蛇的 js 代码 */
+        //舞台元素
+        let stageElement = document.querySelector('#stage');
+        //蛋的随机横坐标
+        let eggX = Math.floor(Math.random() * 8);
+        //蛋的随机纵坐标
+        let eggY = Math.floor(Math.random() * 8);
+        //随机格子元素，也就是蛋需要被放置的地方 */
+        let eggElement = stageElement.children[eggX].children[eggY];
+        //给随机格子元素放入一个框
+        eggElement.innerHTML = '<div class="egg"></div>';
+
+        //蛇头的横坐标
+        let snakeX = Math.floor(Math.random() * 8);
+        //蛇头的纵坐标 
+        let snakeY = Math.floor(Math.random() * 8);
+        //贪吃蛇元素数组
+        let snakeArray = [{ x: snakeX, y: snakeY }];
+        //生成贪吃蛇
+        snakeArray.forEach(function (item, index) {
+            //随街格子元素，表示蛇的位置，同上
+            let snakeElement = stageElement.children[item.x].children[item.y];
+            //生成蛇
+            if (index == 0) {
+                snakeElement.innerHTML = '<div class="snake head"></div>'
+            } else {
+                snakeElement.innerHTML = '<div class="snake body"></div>'
+            }
+        });
+
+        //设置键盘监听
+        document.addEventListener('keydown', function (event) {
+            //上
+            if (event.key == 'ArrowUp' || event.key == 'w') {
+                snakeArray[0].x -= 1;
+            }
+            //下
+            if (event.key == 'ArrowDown' || event.key == 's') {
+                snakeArray[0].x += 1;
+            }
+            //左
+            if (event.key == 'ArrowLeft' || event.key == 'a') {
+                snakeArray[0].y -= 1;
+            }
+            //右
+            if (event.key == 'ArrowRight' || event.key == 'd') {
+                snakeArray[0].y += 1;
+            }
+            stageElement.querySelectorAll('.snake').forEach(function (item) {
+                item.parentElement.removeChild(item);
+            });
+            //生成贪吃蛇
+            snakeArray.forEach(function (item, index) {
+                //随街格子元素，表示蛇的位置，同上
+                let snakeElement = stageElement.children[item.x].children[item.y];
+                //生成蛇
+                if (index == 0) {
+                    snakeElement.innerHTML = '<div class="snake head"></div>'
+                } else {
+                    snakeElement.innerHTML = '<div class="snake body"></div>'
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
