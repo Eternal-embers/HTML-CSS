@@ -1,0 +1,30 @@
+body {
+    background: #2f3542
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #6dd3e3;
+}
+
+.logo_text {
+    font-family: "STKaiti";
+    font-size: 96px;
+    fill: none;
+    stroke: url(#geekColor);
+    stroke-width: 1;
+    stroke-dasharray: 10 800;
+    stroke-dashoffset: 10;
+    animation: 3s linear 0s drawing forwards;
+}
+
+/* 绘制动画 */
+@keyframes drawing {
+    to {
+        stroke-dasharray: 800;
+        stroke-dashoffset: 0;
+    }
+}

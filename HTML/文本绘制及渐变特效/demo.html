@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" conten="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>文本绘制及渐变特效</title>
+</head>
+
+<body>
+    <div class="container">
+        <svg width="500" height="250" class="text">
+            <!--定义渐变颜色-->
+            <defs>
+                <linearGradient id="geekColor" gradientTransform="rotate(180)">
+                    <stop offset="0%" stop-color="#91bd3a">
+                        <!--渐变动画-->
+                        <animate attributeName="stop-color" values="#12cad6;#826ce6;#6dd3e3;" dur="10s" begin="3s"
+                            repeatConunt="indefinite">
+                        </animate>
+                    </stop>
+                    <stop offset="0%" stop-color="#12cad6">
+                        <animate attributeName="stop-color" values="#12cad6;#826ce6;#6dd3e3;" dur="10s" begin="3s"
+                            repeatConunt="indefinite">
+                        </animate>
+                    </stop>
+                </linearGradient>
+            </defs>
+            <text class="logo_text" x="100" y="100">劣等生</text>
+        </svg>
+    </div>
+</body>
+
+</html>
