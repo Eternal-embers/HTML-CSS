@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        body {
+            background-color: rgba(33, 33, 33, 50);
+        }
+
+        .code {
+            position: relative;
+            width: 25vw;
+            margin: 10vh auto;
+            padding: 2vh 2vw;
+            border: 1px solid #ffffff60;
+            border-radius: 1vw;
+            background-color: rgba(210, 210, 210, 0.3);
+        }
+
+        p {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2vw;
+        }
+
+        .copy {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1vh;
+            color: white;
+        }
+
+        .copy:hover {
+            scale: 1.2;
+        }
+
+        .copySuccess {
+            position: absolute;
+            width: 5vw;
+            padding: 1vh 1vw;
+            background-color: #7c7c7c60;
+            border: 1px solid rgb(66, 66, 66);
+            border-radius: 1vh;
+            animation: animate 1.5s linear forwards;
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-6vh);
+            }
+
+        }
+    </style>
+</head>
+<html>
+
+<body>
+    <div class="code">
+        <p>
+            \begin{bmatrix} <br />
+            a_{11} & a_{12} & a_{13} \\ <br />
+            a_{21} & a_{22} & a_{23} \\ <br />
+            a_{31} & a_{32} & a_{33} \\ <br />
+            \end{bmatrix}
+        </p>
+        <div class="copy"><i class="fa-regular fa-copy"></i></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var elements = document.querySelectorAll('.code');
+    elements.forEach((element) => {
+        element.addEventListener('click', function (event) {
+            var textToCopy = element.children[0].innerText; // 获取要复制的文本元素的innerText
+            var tempInput = document.createElement('textarea'); // 创建一个临时textarea元素,如果使用input则无法复制到换行
+            document.body.appendChild(tempInput); // 添加到页面中
+            tempInput.value = textToCopy; // 将要复制的文本赋值给临时输入框的value属性
+            tempInput.select(); // 选中临时输入框中的文本
+            document.execCommand('copy'); // 复制文本到剪切板
+            document.body.removeChild(tempInput); // 移除临时输入框元素
+
+            /* 创建节点 */
+            var copySuccess = document.createElement('div');
+            copySuccess.innerHTML = '复制成功!';
+
+            document.body.appendChild(copySuccess);//添加到页面
+            /* 获取点击位置 */
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+
+            copySuccess.style.left = mouseX + 'px';
+            copySuccess.style.top = mouseY + 'px';
+
+            copySuccess.className = 'copySuccess';//设置样式
+
+            setTimeout(() => {
+                document.body.removeChild(copySuccess);
+            }, 5000);
+        })
+    });
+</script>
