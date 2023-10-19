@@ -45,32 +45,34 @@
         // 初始化下载按钮
         var downloadBtn = document.getElementById('download-btn');
 
-        // 定义一个变量来保存下载的文件名
-        var fileName = '';
+        downloadBtn.addEventListener('click', function () {
+            // 定义一个变量来保存下载的文件名
+            var fileName = '';
 
-        // 定义一个变量来保存下载的文件大小
-        var fileSize = 0;
+            // 定义一个变量来保存下载的文件大小
+            var fileSize = 0;
 
-        // 循环遍历所有文件
-        for (var i = 0; i < files.length; i++) {
-            // 获取文件的信息
-            var file = files[i];
+            // 循环遍历所有文件
+            for (var i = 0; i < files.length; i++) {
+                // 获取文件的信息
+                var file = files[i];
 
-            // 将文件名和文件大小保存到变量中
-            fileName = file.cells[1].innerHTML;
-            fileSize = file.cells[2].innerHTML;
+                // 将文件名和文件大小保存到变量中
+                fileName = file.cells[1].innerHTML;
+                fileSize = file.cells[2].innerHTML;
 
-            // 将变量保存到`download.txt`文件中
-            var text = `${fileName} - ${fileSize} KB`;
-            var blob = new Blob([text], { type: 'text/plain' });
-            var url = URL.createObjectURL(blob);
-            var a = document.createElement('a');
-            a.href = url;
-            a.download = fileName;
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-        }
+                // 将变量保存到`download.txt`文件中
+                var text = `${fileName} - ${fileSize} KB`;
+                var blob = new Blob([text], { type: 'text/plain' });
+                var url = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+            }
+        })
     </script>
 </body>
 
