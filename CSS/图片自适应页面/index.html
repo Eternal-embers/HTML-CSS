@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-container {
+            /* 使用弹性盒子布局 */
+            display: flex;
+            /* 允许图片换行 */
+            flex-wrap: wrap;
+            /* 居中显示图片 */
+            justify-content: center;
+        }
+
+        .image-container img {
+            flex: 1;
+            /* 图片的最大宽度为容器的宽度 */
+            max-width: 100%;
+            /* 图片的高度自动调整，保持宽高比 */
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="../picture/4.png" alt="">
+        <img src="../picture/5.jpg" alt="">
+        <img src="../picture/12.jpg" alt="">
+        <img src="../picture/14.jpg" alt="">
+        <img src="../picture/19.png" alt="">
+        <img src="../picture/12.jpg" alt="">
+    </div>
+</body>
+
+</html>
