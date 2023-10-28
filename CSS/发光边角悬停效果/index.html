@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>发光边角悬停效果</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" style="--clr: #f00;"></div>
+        <div class="card" style="--clr:#0f0;"></div>
+        <div class="card" style="--clr:#ff0;"></div>
+    </div>
+    <script>
+        let cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.onmousemove = function (e) {
+                let x = e.pageX - card.offsetLeft;
+                let y = e.pageY - card.offsetTop;
+                card.style.setProperty('--x', x + 'px');
+                card.style.setProperty('--y', y + 'px');
+            }
+        });
+    </script>
+</body>
+
+</html>

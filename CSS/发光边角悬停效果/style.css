@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.container .card {
+    position: relative;
+    width: 25vw;
+    height: 60vh;
+    background: rgba(45, 45, 45, 1);
+    border-radius: 1vw;
+    overflow: hidden;
+}
+
+.container .card::before {
+    content: '';
+    position: absolute;
+    top: var(--y);
+    left: var(--x);
+    /* 使得before居中在鼠标点击的位置 */
+    transform: translate(-50%, -50%);
+    /* 从中心向外扩散的径向渐变效果，渐变从中心开始向外扩散直到完全透明 */
+    background: radial-gradient(var(--clr), transparent, transparent);
+    width: 30vw;
+    height: 60vh;
+    opacity: 0;
+    transition: 0.2s top 0s, left 0s;
+}
+
+.container .card:hover::before {
+    opacity: 1;
+}
+
+.container .card::after {
+    content: '';
+    position: absolute;
+    /* 伪元素相对于其包含块的上、右、下、左的偏移量 */
+    inset: 2px;
+    border-radius: 1vw;
+    /* 背景为一个与card同色的颜色 */
+    background-color: rgba(45, 45, 45, 0.8);
+}
