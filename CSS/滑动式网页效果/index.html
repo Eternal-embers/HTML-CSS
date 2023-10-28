@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>滑动选单</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="logo"><img src="logo.webp" alt="logo"></div>
+    <input type="radio" name="nav" id="nav-intro">
+    <input type="radio" name="nav" id="nav-zoomTable">
+    <input type="radio" name="nav" id="nav-example">
+    <input type="radio" name="nav" id="nav-tools">
+    <input type="radio" name="nav" id="nav-connection">
+    <nav>
+        <ul>
+            <li class="intro"><label for="nav-intro">introduction</label></li>
+            <li class="zoomTable"><label for="nav-zoomTable">zoomTable</label></li>
+            <li class="example"><label for="nav-example">example</label></li>
+            <li class="tools"><label for="nav-tools">tools</label></li>
+            <li class="connection"><label for="nav-connection">connection</label></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <section id="section1"></section>
+        <section id="section2"></section>
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+    </div>
+
+    <footer>
+        <hr />
+        <div class="foot">
+            <div class="info">
+                <a href="#terms of service">Terms of Service</a>
+                <a href="#private Policy">Private Policy</a>
+                <a>Parent's Guide</a>
+                <a>Safe and Fair Play Policy</a>
+                <a>Other Legal Docs</a>
+                <a>For Media</a>
+                <a>Manage Cookie</a>
+            </div>
+            <div class="link">
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-tiktok"></i>
+                <i class="fa-brands fa-weixin"></i>
+                <i class="fa-brands fa-qq"></i>
+            </div>
+        </div>
+        <div class="supercell">
+            <img src="supercell.webp" alt="supercell">
+        </div>
+        <hr />
+    </footer>
+    <script>
+        var radio = document.querySelectorAll('input[type="radio"]');
+
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        radio.forEach(function (option, index) {
+            option.addEventListener('change', () => {
+                if (option.checked) {
+                    let id = 'section' + (index + 1);
+                    scrollToSection(id);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
