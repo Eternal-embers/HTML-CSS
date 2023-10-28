@@ -893,7 +893,7 @@ var paths = [
     "../Resource/outfit/Other/Relaxed Fit Jonesy.png",
     "../Resource/outfit/Other/slayer-charlotte.jpeg",
     "../Resource/outfit/Other/snowdancer (2).webp",
-    "../Resource/outfit/Other/snowdancer.webp",
+    "../Resource/outfit/Other/snowdancer.png",
     "../Resource/outfit/Other/tsuki.png",
     "../Resource/outfit/Other/Yee-haw.png",
     "../Resource/outfit/Other/Zenith.png",
