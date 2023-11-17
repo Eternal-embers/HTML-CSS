@@ -1,0 +1,15 @@
+body {
+    background: #000;
+}
+
+p {
+    font-size: 0.5em;
+    display: block;
+    margin: 2vh auto;
+    width: 600px;
+    color: transparent;
+    background: url('ikun.gif') center/cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: grayscale(5) contrast(1.5) invert(2);
+}

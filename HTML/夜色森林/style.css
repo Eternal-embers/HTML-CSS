@@ -1,0 +1,258 @@
+:root {}
+
+
+.item_1 {
+    width: 100vw;
+    height: 75px;
+    animation-name: bounceInDown;
+    animation-duration: 1s;
+}
+
+/* From Animate CSS */
+/* That's not me, they are better for that */
+@keyframes bounceInDown {
+
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -3000px, 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translate3d(0, 25px, 0);
+    }
+
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+
+    to {
+        transform: none;
+    }
+}
+
+/* Buger menu yourself you know ;) */
+#super-burger {
+    position: relative;
+    display: block;
+    width: calc(75px + 30px);
+    height: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+#super-burger::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: inherit;
+    width: inherit;
+    background-color: rgba(10, 10, 10, 0.1);
+    clip-path: circle(0 at 100% 100%);
+    transition-duration: .8s;
+    transition-timing-function: ease;
+    transition-property: clip-path;
+}
+
+#super-burger:hover::before,
+#super-burger:focus::before {
+    clip-path: circle(180% at 100% 100%);
+}
+
+[burger-of-the-year] {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #eee;
+    border-radius: 3px;
+    width: 20px;
+    height: 2px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
+[burger-of-the-year]::after,
+[burger-of-the-year]::before {
+    content: "";
+    position: inherit;
+    left: 50%;
+    background-color: inherit;
+    border: inherit;
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    cursor: inherit;
+}
+
+[burger-of-the-year]::after {
+    transform: translate(-50%, -5px);
+}
+
+[burger-of-the-year]::before {
+    transform: translate(-50%, 5px);
+}
+
+
+/* For Background Chrismas  */
+
+[christmas] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* only run with prefix <-webkit-> '-' */
+    background: -webkit-radial-gradient(50% 0%,
+            /* Position */
+            circle
+            /* Type */
+            cover,
+            /* Size */
+            rgba(30, 87, 153, 1) 0%,
+            /* Color ColorPosition */
+            MidnightBlue 50%,
+            rgba(30, 30, 30, 1) 100%);
+
+}
+
+[circle] {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 700px;
+    background: linear-gradient(235deg, #008cde 16%, #3136ea 100%);
+    /*  background: linear-gradient(235deg, teal 16%, Navy 100%); */
+    /*   clip-path: circle(45% at 50% 50%); */
+    clip-path: url(#circle);
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+
+    animation-name: nightTurn;
+    animation-duration: 1s;
+
+}
+
+[moon] {
+    position: absolute;
+    right: 50%;
+    top: 30%;
+    height: 120px;
+    width: 120px;
+    background-color: LemonChiffon;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+[moon]::before {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+
+    background: -webkit-radial-gradient(60% 36%,
+            /* Position */
+            circle
+            /* Type */
+            cover,
+            /* Size */
+            rgba(255, 253, 211, .5) 0%,
+            rgba(255, 253, 211, .1) 100%);
+    filter: brightness(100%) contrast(150%) saturate(150%) blur(35px);
+
+    transform: translate(-50%, -50%);
+}
+
+[decor] {
+    position: absolute;
+    top: 250px;
+    left: 40%;
+}
+
+[mountain] {
+    position: absolute;
+    top: 53%;
+    left: 35%;
+    width: 265px;
+    height: 90px;
+    transform: scale(3);
+}
+
+[mountain]:nth-of-type(2) {
+    background: #BBDEFB;
+    transform: translate(150px, 45px) scale(3);
+    clip-path: url(#mountain_5)
+}
+
+[mountain]:nth-of-type(3) {
+    background: #64B5F6;
+    transform: translateY(0) scale(3);
+    clip-path: url(#mountain_4)
+}
+
+[mountain]:nth-of-type(4) {
+    background: #1E88E5;
+    transform: translateY(15px) scale(3);
+    clip-path: url(#mountain_3)
+}
+
+[mountain]:nth-of-type(5) {
+    background: #1976D2;
+    transform: translateY(60px) scale(3);
+    clip-path: url(#mountain_2)
+}
+
+[mountain]:nth-of-type(6) {
+    background: #1565C0;
+    transform: translateY(130px) scale(3);
+    clip-path: url(#mountain_1)
+}
+
+[floor] {
+    position: absolute;
+    top: 255px;
+    left: 50%;
+    height: 300px;
+    width: 600px;
+    background: -webkit-radial-gradient(center,
+            ellipse cover,
+            rgba(109, 179, 242, 1) 0%,
+            rgba(84, 163, 238, 1) 50%,
+            rgba(54, 144, 240, 1) 51%,
+            rgba(30, 105, 222, 1) 100%);
+    transform: translate(-50%, -50%);
+}
+
+[trees] {
+    position: absolute;
+    top: 0;
+    height: 300px;
+    width: 600px;
+    transform: scale(1.5);
+    clip-path: url(#trees);
+}
+
+[trees]:nth-of-type(7) {
+    left: -85px;
+    background: #002c80;
+}

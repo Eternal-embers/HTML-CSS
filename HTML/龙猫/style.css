@@ -1,0 +1,418 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+main {
+    position: relative;
+    width: min(90vh, 90vw);
+    aspect-ratio: 1/1;
+    text-align: center;
+}
+
+.Totoro {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width: 75%;
+}
+
+.Totoro__body {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 88%;
+    height: 73%;
+    border-radius: 50%;
+    background: #4c4a43;
+    transform: translate(-50%);
+}
+
+.Totoro__belly {
+    position: absolute;
+    inset: 2%;
+    border-radius: 50%;
+}
+
+.Totoro__belly::before,
+.Totoro__belly::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.Totoro__belly::before {
+    bottom: 2%;
+    left: 3%;
+    right: 3%;
+    top: 15%;
+    background: #6c685c;
+}
+
+.Totoro__belly::after {
+    bottom: 1%;
+    left: 5%;
+    right: 5%;
+    top: 10%;
+    background: #6c685c;
+}
+
+.Totoro__arms {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    bottom: 25%;
+}
+
+.Totoro__arm {
+    position: absolute;
+    z-index: -1;
+    width: 20%;
+    height: 100%;
+    background: #4c4a43;
+    border-radius: 200% 150% 50% 150%;
+}
+
+.Totoro__arm--right {
+    right: 6%;
+    transform: rotatey(180deg) rotate(15deg);
+}
+
+.Totoro__arm--left {
+    left: 6%;
+    transform: rotate(15deg);
+}
+
+.Totoro__head {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    width: 78%;
+    height: 32%;
+    transform: translate(-50%);
+    perspective: 400px;
+}
+
+.Totoro__head::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #4c4a43;
+    clip-path: polygon(0% 100%, 12% 30%, 30% 10%, 70% 10%, 88% 30%, 100% 100%);
+}
+
+.Totoro__head::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: -8%;
+    bottom: 55%;
+    background: #4c4a43;
+    clip-path: ellipse(51.7% 100% at 50% 97%);
+}
+
+.Totoro__eyes {
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    left: 23%;
+    right: 23%;
+    height: 19%;
+}
+
+.Totoro__eye {
+    position: absolute;
+    top: 50%;
+    width: 21%;
+    height: 100%;
+    border-radius: 50%;
+    background: #b2b4b4;
+    transform: translatey(-50%);
+}
+
+.Totoro__eye::before {
+    content: "";
+    position: absolute;
+    top: 47%;
+    left: 55%;
+    width: 38%;
+    aspect-ratio: 1/1;
+    background: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Totoro__eye--right {
+    right: 0;
+}
+
+.Totoro__eye--right::before {
+    left: 45%;
+}
+
+.Totoro__nose {
+    position: absolute;
+    z-index: 10;
+    top: 63%;
+    left: 50%;
+    width: 40%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: radial-gradient(circle at 39% 18%, #585954 19%, #1a1a1b 20%);
+    transform: translate(-50%, -50%);
+    clip-path: circle(50% at 50% -42%);
+}
+
+.Totoro__nose::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    top: 0;
+    background: radial-gradient(circle at 37% 8%, #000 3%, rgba(0, 0, 0, 0) 4%), radial-gradient(circle at 63% 8%, #000 3%, rgba(0, 0, 0, 0) 4%);
+}
+
+.Totoro__legs {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+}
+
+.Totoro__leg {
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    height: 100%;
+    background: #4c4a43;
+}
+
+.Totoro__leg--left {
+    left: 0;
+    clip-path: circle(75% at 82% 16%);
+}
+
+.Totoro__leg--right {
+    left: 50%;
+    clip-path: circle(75% at 18% 16%);
+}
+
+.Totoro__legs::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: ellipse(30% 18% at 50% 98.5%);
+    background: #4c4a43;
+}
+
+.Totoro__ears {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+    transform: translatey(-90%);
+}
+
+.Totoro__ear {
+    position: absolute;
+    top: 55%;
+    width: 10%;
+    aspect-ratio: 1/1;
+    background: #4c4a43;
+    border-radius: 50%;
+}
+
+.Totoro__ear--left {
+    left: 20%;
+}
+
+.Totoro__ear--right {
+    right: 20%;
+}
+
+.Totoro__ear::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/2;
+    background: #4c4a43;
+    transform-origin: 50% 100%;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.Totoro__ear--left::before {
+    transform: translateY(-100%) rotate(-8deg);
+}
+
+.Totoro__ear--right::before {
+    transform: translateY(-100%) rotate(8deg);
+}
+
+.Totoro__ear::after {
+    content: "";
+    position: absolute;
+    top: 70%;
+    width: 60%;
+    height: 120%;
+    background: #4c4a43;
+}
+
+.Totoro__ear--left::after {
+    left: 40%;
+    transform: rotate(-15deg);
+}
+
+.Totoro__ear--right::after {
+    right: 40%;
+    transform: rotate(15deg);
+}
+
+.Totoro__whisker {
+    position: absolute;
+    top: 45%;
+    width: 27%;
+    height: 1.8%;
+    background: #000;
+}
+
+.Totoro__whisker--left {
+    left: -7%;
+    transform: rotate(3deg);
+}
+
+.Totoro__whisker--right {
+    right: -7%;
+    transform: rotate(-3deg);
+}
+
+.Totoro__whisker::before,
+.Totoro__whisker::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 23/0.8;
+    background: #000;
+}
+
+.Totoro__whisker::before {
+    top: 600%;
+}
+
+.Totoro__whisker::after {
+    top: 1100%;
+}
+
+.Totoro__whisker--left::before {
+    left: -12%;
+    transform: rotate(-10deg);
+}
+
+.Totoro__whisker--right::before {
+    right: -12%;
+    transform: rotate(10deg);
+}
+
+.Totoro__whisker--left::after {
+    left: -4%;
+    transform: rotate(-17deg);
+}
+
+.Totoro__whisker--right::after {
+    right: -4%;
+    transform: rotate(17deg);
+}
+
+.Totoro__whisker--left,
+.Totoro__whisker--left::before,
+.Totoro__whisker--left::after {
+    border-top-left-radius: 100%;
+}
+
+.Totoro__whisker--right,
+.Totoro__whisker--right::before,
+.Totoro__whisker--right::after {
+    border-top-right-radius: 100%;
+}
+
+.Totoro__bellyMarks {
+    position: absolute;
+    z-index: 10;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    height: 20%;
+    background:
+        /* second line */
+        radial-gradient(circle at 10% 100%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 10% 85%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 30% 100%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 30% 85%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 50% 100%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 50% 85%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 68% 100%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 68% 85%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 90% 100%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 90% 85%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        /* filrt line */
+        radial-gradient(circle at 25% 40%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 25% 25%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 43% 40%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 43% 25%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 58% 40%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 58% 25%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 75% 40%, #6c685c 8%, rgba(0, 0, 0, 0) 6%),
+        radial-gradient(circle at 75% 25%, #4c4a43 8%, rgba(0, 0, 0, 0) 6%),
+        #6c685c;
+    border-top-left-radius: 16vmin;
+    border-top-right-radius: 16vmin;
+    overflow: hidden;
+}
+
+.brightness {
+    position: absolute;
+    z-index: 100;
+    top: 65%;
+    left: -28%;
+    width: 80%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border-bottom-right-radius: 35%;
+    backdrop-filter: brightness(2.1) saturate(160%);
+    transform: translatey(-50%);
+}
+
+.Totoro__hat {
+    position: absolute;
+    z-index: 10;
+    top: -22%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 75% 120%, #4c4a43 30%, rgba(0, 0, 0, 0) 31%),
+        linear-gradient(110deg, rgba(0, 0, 0, 0) 50%, #778150 51%, #778150 55%, rgba(0, 0, 0, 0) 56%),
+        linear-gradient(to top, #778150 60%, rgba(0, 0, 0, 0) 61%);
+    transform: rotate(7deg);
+}
